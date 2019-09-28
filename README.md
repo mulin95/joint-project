@@ -21,6 +21,75 @@
 11. better-scroll
 
 
+## 路由
+
+#### 首页
+
+```
+/index/home				首页
+/index/practice		练习室
+/index/communicate	交流室
+/index/profile			我的
+```
+
+#### 查找
+
+```
+/search/grade		年级
+/search/subject	科目
+/search/text		搜索
+```
+
+#### 精品资料
+
+```
+/boutique/home		首页
+/boutique/list		真题列表
+```
+
+#### 商品详情页
+
+```
+/detail/:id
+```
+
+#### 订单
+
+```
+/order/all			全部
+/order/unpaid		未付款
+/order/shipped		待发货
+/order/receiving	待收货
+```
+
+#### 我的售后
+
+```
+/aftersale/list		售后
+/aftersale/service	客服
+```
+
+#### 练习交流室
+
+```
+/practice		练习室
+/communicate	交流室
+```
+
+#### 登陆注册
+
+```
+/login		登陆
+/signup		注册
+/edit			编辑修改
+```
+
+#### 账户中心
+
+```
+/profile
+```
+
 ****
 
 
