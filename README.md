@@ -1,3 +1,29 @@
+会了么
+
+## 技术架构
+
+1. SPA——(single page application)
+2. react
+3. CRA——(create-react-app)
+   - create-react-app
+   - customize-cra
+4. react-router-dom
+5. styled-components
+6. immutable
+7. redux
+   - react-redux
+   - redux-immutable
+   - redux-saga/redux-thunk
+   - generator
+8. Decorator装饰器
+9. fetch
+10. antd-mobile
+11. better-scroll
+
+
+****
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
