@@ -19,9 +19,8 @@ module.exports = override(
     ['components']: path.resolve(__dirname, 'src/components'),
     ["pages"]: path.resolve(__dirname, "src/pages"),
     ['utils']: path.resolve(__dirname, 'src/utils'),
-
     ['styles']: path.resolve(__dirname, 'src/assets/styles'),
-    ['images']: path.resolve(__dirname, 'src/assets/images'),
+    ['images']: path.resolve(__dirname, 'src/assets/loginImages'),
     ["styled"]: path.resolve(__dirname, "src/components/styled"),
   }),
 
