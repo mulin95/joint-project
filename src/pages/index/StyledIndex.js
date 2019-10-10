@@ -14,6 +14,7 @@ const IndexContainer=styled.div`
   }
 `
 const TableBar=border({
+  width:'1px 0 0',
   comp:styled.nav`
     ul{
       display: flex;
