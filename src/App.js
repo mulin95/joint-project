@@ -5,6 +5,7 @@ import 'styles/reset.css'
 import 'styles/animate.css'
 
 import {Order} from 'pages/order/';
+import {Communicate} from 'pages/communicate/';
 import Index from 'pages/index/Index';
 import Page404 from 'components/Page404.jsx';
 
@@ -15,6 +16,7 @@ function App() {
         <Route path='/index' component={Index}></Route>
         {/* <Route path='/detail' component={Detail}></Route> */}
         <Route path='/order' component={Order}></Route>
+        <Route path='/communicate/:id' component={Communicate}></Route>
         <Redirect from='/' to='/index' exact></Redirect>
         <Route component={Page404}></Route>
       </Switch>
