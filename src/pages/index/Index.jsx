@@ -6,6 +6,8 @@ import {
   Switch,
 } from 'react-router-dom'
 
+import {Profile} from './profile/index';
+
 import table_bar1 from 'images/table-bar (1).png'
 import table_bar2 from 'images/table-bar (2).png'
 import table_bar3 from 'images/table-bar (3).png'
@@ -58,7 +60,7 @@ export default class Index extends Component {
             <Route path={match.path+'/home'}></Route>
             <Route path={match.path+'/practice'}></Route>
             <Route path={match.path+'/communicate'}></Route>
-            <Route path={match.path+'/profile'}></Route>
+            <Route path={match.path+'/profile'} component={Profile}></Route>
             <Redirect from={match.path} to={match.path+'/home'}></Redirect>
           </Switch>
         </main>
