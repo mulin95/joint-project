@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class profile extends Component {
+class Order extends Component {
     render() {
         return (
             <div>
-                profile
+                Order
             </div>
         );
     }
 }
 
-export default profile;
+export default Order;

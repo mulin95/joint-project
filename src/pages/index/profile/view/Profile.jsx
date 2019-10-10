@@ -54,7 +54,7 @@ const MsgList = [
 
 class ProfileContainer extends Component {
     render() {
-        const {history,match} = this.props;
+        const {history} = this.props;
         return (
             <Profile>
             <header>

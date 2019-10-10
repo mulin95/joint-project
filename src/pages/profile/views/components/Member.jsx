@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class SetUp extends Component {
+class Member extends Component {
     render() {
         return (
             <div>
-                ⚙设置
+                Member
             </div>
         );
     }
 }
 
-export default SetUp;
+export default Member;
