@@ -1,7 +1,6 @@
 import React from 'react';
 
 import TitleBack from 'components/titleBack/TitleBack'
-// import { Container } from './styles';
 
 export default function views() {
   return (

@@ -50,7 +50,7 @@ const table_bar=[
 export default class Index extends Component {
   render() {
     const {match,history,location}=this.props
-    let activeBar=location.pathname.split('/').pop()
+    let activeBar=location.pathname.split('/')[2]
     return (
       <IndexContainer>
         <main>
