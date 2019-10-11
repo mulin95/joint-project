@@ -22,6 +22,7 @@ module.exports = override(
 
     ['styles']: path.resolve(__dirname, 'src/assets/styles'),
     ['images']: path.resolve(__dirname, 'src/assets/images'),
+    ['cmcimg']: path.resolve(__dirname, 'src/assets/communicateImages'),
     ["styled"]: path.resolve(__dirname, "src/components/styled"),
   }),
 

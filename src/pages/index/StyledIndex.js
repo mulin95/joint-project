@@ -6,7 +6,9 @@ const IndexContainer=styled.div`
   display: flex;
   flex-direction:column;
   main {
-    flex: 1
+    flex: 1;
+    overflow:hidden;
+    position:relative;
   }
   nav {
     height: .49rem;
