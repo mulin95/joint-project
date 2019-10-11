@@ -1,11 +1,14 @@
 import React, { PureComponent} from 'react'
 
+import ListUI from 'components/list/ListUI'
+
 class All extends PureComponent {
     render() {
+        console.log(this)
         return (
-            <div>
-                All
-            </div>
+            <ListUI list={this.props.list}>
+
+            </ListUI>
         )
     }
 }
