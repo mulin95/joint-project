@@ -15,7 +15,7 @@ import Receiving from '../component/Receiving'
 import Shipped from '../component/Shipped'
 
 const OrderUI = (props) => {
-    console.log(props)
+    console.log(props.list)
     return (
         <div>
             <NavBar
@@ -33,10 +33,10 @@ const OrderUI = (props) => {
             </TabBarContainer>
 
             <ListBody>
-            <Route path={`${props.path}/all`} children={(props) => <All></All>}></Route>
-            <Route path={`${props.path}/unpaid`} children={(props) => <Unpaid></Unpaid>}></Route>
-            <Route path={`${props.path}/shipped`} children={(props) => <Shipped></Shipped>}></Route>
-            <Route path={`${props.path}/receiving`} children={(props) => <Receiving></Receiving>}></Route>
+            <Route path={`${props.path}/all`} children={(prop) => <All list={props.list} ph="sb"></All>}></Route>
+            {/* <Route path={`${props.path}/unpaid`} children={(props) => <Unpaid></Unpaid>}></Route> */}
+            {/* <Route path={`${props.path}/shipped`} children={(props) => <Shipped></Shipped>}></Route> */}
+            {/* <Route path={`${props.path}/receiving`} children={(props) => <Receiving></Receiving>}></Route> */}
             </ListBody>
         </div>
     )

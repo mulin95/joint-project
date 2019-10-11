@@ -4,7 +4,7 @@ import { Route,Switch,Redirect } from 'react-router-dom';
 import 'styles/reset.css'
 import 'styles/animate.css'
 
-import Index from 'pages/index/index/Index';
+import Index from 'pages/index/Index';
 import {Order} from 'pages/order/';
 import Page404 from 'components/Page404.jsx';
 
