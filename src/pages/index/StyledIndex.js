@@ -6,7 +6,9 @@ const IndexContainer=styled.div`
   display: flex;
   flex-direction:column;
   main {
-    flex: 1
+    flex: 1;
+    overflow:hidden;
+    position:relative;
   }
   nav {
     height: .49rem;
@@ -14,6 +16,7 @@ const IndexContainer=styled.div`
   }
 `
 const TableBar=border({
+  width:'1px 0 0',
   comp:styled.nav`
     ul{
       display: flex;

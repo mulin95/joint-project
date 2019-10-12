@@ -4,6 +4,9 @@ import { Route,Switch,Redirect } from 'react-router-dom';
 import 'styles/reset.css'
 import 'styles/animate.css'
 
+import {Order} from 'pages/order/';
+import {Communicate} from 'pages/communicate/';
+import {Profile}  from 'pages/profile/';
 import Index from 'pages/index/Index';
 import Login from 'pages/login/index';
 import Page404 from 'components/Page404.jsx';
@@ -12,9 +15,12 @@ function App() {
   return (
     <>
       <Switch>
-        <Route path='/index' component={Index}></Route>
+        <Route path='/index' component={Index}></Route> 
         {/* <Route path='/detail' component={Detail}></Route> */}
         <Route path='/login' component={Login}></Route>
+        <Route path='/order' component={Order}></Route>
+        <Route path='/communicate/:id' component={Communicate}></Route>
+        <Route path='/profile' component={Profile}></Route>
         <Redirect from='/' to='/index' exact></Redirect>
         <Route component={Page404}></Route>
       </Switch>

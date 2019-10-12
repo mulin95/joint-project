@@ -6,6 +6,10 @@ import {
   Switch,
 } from 'react-router-dom'
 
+import {Profile} from './profile/'
+import {Communicate} from './communicate/'
+import {Practice} from './practice/'
+
 import table_bar1 from 'images/table-bar (1).png'
 import table_bar2 from 'images/table-bar (2).png'
 import table_bar3 from 'images/table-bar (3).png'
@@ -14,6 +18,7 @@ import table_bar_a1 from 'images/table-bar-a (1).png'
 import table_bar_a2 from 'images/table-bar-a (2).png'
 import table_bar_a3 from 'images/table-bar-a (3).png'
 import table_bar_a4 from 'images/table-bar-a (4).png'
+
 
 import {
   IndexContainer,
@@ -50,15 +55,15 @@ const table_bar=[
 export default class Index extends Component {
   render() {
     const {match,history,location}=this.props
-    let activeBar=location.pathname.split('/').pop()
+    let activeBar=location.pathname.split('/')[2]
     return (
       <IndexContainer>
         <main>
           <Switch>
             <Route path={match.path+'/home'}></Route>
-            <Route path={match.path+'/practice'}></Route>
-            <Route path={match.path+'/communicate'}></Route>
-            <Route path={match.path+'/profile'}></Route>
+            <Route path={match.path+'/practice'} component={Practice}></Route>
+            <Route path={match.path+'/profile'} component={Profile}></Route>
+            <Route path={match.path+'/communicate'} component={Communicate}></Route>
             <Redirect from={match.path} to={match.path+'/home'}></Redirect>
           </Switch>
         </main>
