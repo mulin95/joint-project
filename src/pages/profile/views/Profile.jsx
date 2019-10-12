@@ -5,7 +5,7 @@ import {
     Switch,
 }from 'react-router-dom';
 
-import Note     from './components/Note';
+import Note     from './components/note/Note';
 import Order    from './components/Order';
 import Address  from './components/Address';
 import Member   from './components/Member';
