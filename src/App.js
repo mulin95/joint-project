@@ -4,9 +4,11 @@ import { Route,Switch,Redirect } from 'react-router-dom';
 import 'styles/reset.css'
 import 'styles/animate.css'
 
-import {Order} from 'pages/order/';
-import {Communicate} from 'pages/communicate/';
-import {Profile}  from 'pages/profile/';
+import {Order} from 'pages/order/index.js';
+import {Communicate} from 'pages/communicate/index.js';
+import {Profile}  from 'pages/profile/index.js';
+import {Grade} from 'pages/grade/index.js';
+import {Search} from 'pages/search/index.js';
 import Index from 'pages/index/Index';
 import Page404 from 'components/Page404.jsx';
 
@@ -19,6 +21,8 @@ function App() {
         <Route path='/order' component={Order}></Route>
         <Route path='/communicate/:id' component={Communicate}></Route>
         <Route path='/profile' component={Profile}></Route>
+        <Route path='/grade' component={Grade}></Route>
+        <Route path='/search' component={Search}></Route>
         <Redirect from='/' to='/index' exact></Redirect>
         <Route component={Page404}></Route>
       </Switch>

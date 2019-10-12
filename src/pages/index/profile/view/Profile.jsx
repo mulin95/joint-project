@@ -65,14 +65,14 @@ class ProfileContainer extends Component {
                     </dt>
                     <dd>yn2019-10-7</dd>
                 </dl>
-            </header>
+            </header>    
             <Content>
                {
                 MsgList.map((item,index)=>{
                     return (
                         <li 
                         key={item.id + index}
-                        onClick={()=>history.push("/profile/"+item.route)}
+                        onClick={()=>history.push("/ /"+item.route)}
                         >
                             <img src={item.iconLeft} alt=""/>
                             <Text>
