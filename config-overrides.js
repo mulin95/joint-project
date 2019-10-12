@@ -20,8 +20,9 @@ module.exports = override(
     ["pages"]: path.resolve(__dirname, "src/pages"),
     ['utils']: path.resolve(__dirname, 'src/utils'),
     ['styles']: path.resolve(__dirname, 'src/assets/styles'),
-    ['images']: path.resolve(__dirname, 'src/assets/loginImages'),
+    ['images']: path.resolve(__dirname, 'src/assets/images'),
     ["styled"]: path.resolve(__dirname, "src/components/styled"),
+    ['loginImages']: path.resolve(__dirname, 'src/assets/loginImages'),
   }),
 
   fixBabelImports('import', {
