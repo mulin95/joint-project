@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CellContainer } from './StyledCell'
+import { CellContainer } from './Styled'
 
 import kan from 'cmcimg/kan.png'
 import kanA from 'cmcimg/kanA.png'
@@ -9,7 +9,6 @@ import pingA from 'cmcimg/pingA.png'
 import zan from 'cmcimg/zan.png'
 import zanA from 'cmcimg/zanA.png'
 import wen from 'cmcimg/wen.png'
-import sou from 'cmcimg/sou.png'
 
 
 function Cell() {
@@ -34,9 +33,9 @@ function Cell() {
         </div>
       </div>
       <ul className='foot'>
-        <li><p><img src={kan} alt="" /></p><span>1.1万</span></li>
-        <li><p><img src={ping} alt="" /></p><span>100</span></li>
-        <li><p><img src={zan} alt="" /></p><span>100</span></li>
+        <li><p><img src={true?kan:kanA} alt="" /></p><span>1.1万</span></li>
+        <li><p><img src={true?ping:pingA} alt="" /></p><span>100</span></li>
+        <li><p><img src={false?zan:zanA} alt="" /></p><span>100</span></li>
       </ul>
     </CellContainer>
   )

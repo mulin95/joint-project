@@ -13,8 +13,6 @@ const smlFont=`
 const CellContainer=border({
   width:'0 0 1px',
   comp:styled.div`
-  padding:0 .15rem;
-  background:#fff;
   .user{
     padding:.07rem 0;
     display:flex;
