@@ -23,6 +23,7 @@ module.exports = override(
     ['images']: path.resolve(__dirname, 'src/assets/images'),
     ['cmcimg']: path.resolve(__dirname, 'src/assets/communicateImages'),
     ["styled"]: path.resolve(__dirname, "src/components/styled"),
+    ['loginImages']: path.resolve(__dirname, 'src/assets/loginImages'),
   }),
 
   fixBabelImports('import', {
