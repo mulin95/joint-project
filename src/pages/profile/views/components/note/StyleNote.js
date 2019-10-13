@@ -40,7 +40,14 @@ const NoteHeader = border({
     `
 })
 
+const NoteAddCom = styled.div`
+    inp{
+        
+    }
+`
+
 export {
     NoteCom,
-    NoteHeader
+    NoteHeader,
+    NoteAddCom
 }
