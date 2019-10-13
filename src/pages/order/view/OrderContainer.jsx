@@ -9,11 +9,11 @@ import GoodImg from 'images/good.jpg'
 class OrderContainer extends PureComponent {
     constructor (props) {
         super(props) 
+        console.log(props)
     }
 
      static getDerivedStateFromProps(props, state) {
         let pathName = props.location.pathname
-        console.log(pathName)
 
         switch (pathName) {
             case '/order/all':
@@ -32,6 +32,8 @@ class OrderContainer extends PureComponent {
                 return {
                     dNum : 3
                 };
+            default: 
+                return null;
         }
     }
 
@@ -47,7 +49,8 @@ class OrderContainer extends PureComponent {
         applyGrade: '初二',
         topicSketch: '物理习题集',
         price: 100,
-        VIPPrice: 92
+        VIPPrice: 92,
+        topicNumber: 7
     }
         return (
             <OrderUI

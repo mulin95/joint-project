@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { NavBar, Icon } from 'antd-mobile';
+import TitleBack from 'components/titleBack/TitleBack';
 import { TabBarContainer, ListBody } from './StyledOrder'
 
 import {
@@ -15,14 +16,11 @@ import Receiving from '../component/Receiving'
 import Shipped from '../component/Shipped'
 
 const OrderUI = (props) => {
-    console.log(props.list)
     return (
         <div>
-            <NavBar
-            mode='light'
-            icon={<Icon type = 'left'></Icon>}
-
-            >我的订单</NavBar>
+            <TitleBack
+            title='我的订单'
+            ></TitleBack>
             <TabBarContainer>
                 <ul>
                     <li onClick = {() => props.handleClick('all')}>全部</li>
