@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import border from 'components/styled/border';
-import bgimg  from 'images/background.jpg';
-import setUp  from 'images/setUp.png';
+import bgimg  from 'assets/profileImages/background.jpg';
+import setUp  from 'assets/profileImages/setUp.png';
 
 const Profile = styled.div`
     background : #fff;
@@ -10,10 +10,13 @@ const Profile = styled.div`
     header{
         height : 2.34rem;
         width : 100%;
-        background:url(${bgimg});
-        background-size:100%;
+        background:url(${bgimg}) no-repeat 0 0;
+        background-size:cover;
         position: relative;
         margin-bottom:.32rem;
+        display:flex;
+        justify-content:center;
+        align-items:center;
         span{
             position: absolute;
             right:.2rem;
@@ -24,9 +27,7 @@ const Profile = styled.div`
             background-size:100%;
         }
         dl{
-            position: absolute;
-            top:.66rem;
-            left:1.35rem;
+            margin-top:.3rem;
             width :1.05rem;
             height:1.35rem;
             dt{
@@ -63,6 +64,7 @@ const Content = styled.ul`
         align-items:center;
         background:#fff;
         padding-left :.2rem;
+        position: relative;
         img{
             width : .16rem;
             height : .18rem;
@@ -72,14 +74,13 @@ const Content = styled.ul`
     li:nth-child(2){
         margin-bottom:.06rem;
     }
-    
 `
 
 const Text = border({
     width : ' 0 0 1px 0 ',
     comp:styled.p`
-        width :2.95rem;
-        position: relative;
+        flex:1;
+        margin-right:.2rem;
         span{
             font-size :.17rem;
             color : #666666;
@@ -88,7 +89,7 @@ const Text = border({
             width:.12rem;
             height:.14rem;
             position: absolute;
-            right :0;
+            right :-.06rem;
             top:.16rem;
         }
     `
