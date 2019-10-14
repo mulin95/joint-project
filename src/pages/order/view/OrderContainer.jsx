@@ -14,7 +14,6 @@ class OrderContainer extends PureComponent {
      static getDerivedStateFromProps(props, state) {
         let pathName = props.location.pathname
         console.log(pathName)
-
         switch (pathName) {
             case '/order/all':
                 return {
@@ -32,11 +31,13 @@ class OrderContainer extends PureComponent {
                 return {
                     dNum : 3
                 };
+            default: 
+                return null;
         }
     }
 
     state = {
-        dNum : 0
+        dNum : 7
     }
 
     render() {
@@ -47,13 +48,16 @@ class OrderContainer extends PureComponent {
         applyGrade: '初二',
         topicSketch: '物理习题集',
         price: 100,
-        VIPPrice: 92
+        VIPPrice: 92,
+        topicNumber: 7
     }
         return (
             <OrderUI
             path={path}
             handleClick={this.handleClick}
             list={obj}
+            dNum={this.state.dNum}
+
             >
             
             </OrderUI>
@@ -62,7 +66,26 @@ class OrderContainer extends PureComponent {
 
     handleClick (tar) {
         let path = this.match.path
-        this.history.push(path + '/' + tar, {tar})
+        let tNum = 0
+        switch (tar) {
+            case 'all':
+                tNum = 0
+                break;
+            case 'unpaid' :
+                tNum = 1
+                break;
+            case 'shipped' :
+                tNum = 2
+                break;
+            case 'receiving' :
+                tNum = 3
+                break;
+            default: 
+                tNum = 0;
+                break;
+        }
+        let dir = this.dNum < tNum ? 'left' : 'right'
+        this.history.push(path + '/' + tar + "?dir=" + dir)
     }
 }
 

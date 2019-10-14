@@ -1,6 +1,12 @@
 import styled from 'styled-components'
 
 const ListContainer = styled.div`
+    position: absolute;
+    background: #fff;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
     ul {
         height: 1.15rem;
         width: 100%;

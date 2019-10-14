@@ -1,13 +1,20 @@
 import React, { PureComponent} from 'react'
 
+import animate from 'components/hoc/animate'
+
+import {withRouter} from 'react-router-dom'
+
+import ListUI from 'components/list/ListUI'
+
 class Shipped extends PureComponent {
     render() {
+        // console.log(this.props)
         return (
-            <div>
-                Shipped
-            </div>
+            <ListUI list={this.props.list}>
+
+            </ListUI>
         )
     }
 }
 
-export default Shipped
+export default withRouter(animate(Shipped))

@@ -18,10 +18,19 @@ const TabBarContainer = styled.div `
 
 const ListBody = styled.div`
     flex: 1;
-    position: relative;
+    position: relative; 
     overflow: hidden;
+`
+
+const Container=styled.div`
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 `
 export {
     TabBarContainer,
-    ListBody
+    ListBody,
+    Container
 }
