@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import note     from 'images/note.png';
-import order    from 'images/order.png';
-import address  from 'images/address.png';
-import member   from 'images/member.png';
-import service  from 'images/service.png';
-import arrow    from 'images/arrow.png';
-import user     from 'images/user.png';
+import note     from 'assets/profileImages/note.png';
+import order    from 'assets/profileImages/order.png';
+import address  from 'assets/profileImages/address.png';
+import member   from 'assets/profileImages/member.png';
+import service  from 'assets/profileImages/service.png';
+import arrow    from 'assets/profileImages/arrow.png';
+import user     from 'assets/profileImages/user.png';
 
 import {
     Profile,
@@ -65,14 +65,14 @@ class ProfileContainer extends Component {
                     </dt>
                     <dd>yn2019-10-7</dd>
                 </dl>
-            </header>
+            </header>    
             <Content>
                {
                 MsgList.map((item,index)=>{
                     return (
                         <li 
                         key={item.id + index}
-                        onClick={()=>history.push("/profile/"+item.route)}
+                        onClick={()=>this.handlerClick(item.route)}
                         >
                             <img src={item.iconLeft} alt=""/>
                             <Text>
@@ -86,6 +86,13 @@ class ProfileContainer extends Component {
             </Content>
         </Profile>
         )
+    }
+    handlerClick(route){
+        if(route === 'order'){
+            this.props.history.push('/'+route);
+        }else{
+            this.props.history.push('/profile/'+route);
+        }
     }
 }
 
