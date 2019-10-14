@@ -18,8 +18,8 @@ const SwiperContainer=border({
       height:.65rem;
       display:flex;
       margin-top:1.6rem;
+      justify-content:space-between;
       li{
-        flex:1;
         font-size:.11rem;
         color:#999;
         display:flex;
