@@ -9,12 +9,11 @@ import GoodImg from 'images/good.jpg'
 class OrderContainer extends PureComponent {
     constructor (props) {
         super(props) 
-        console.log(props)
     }
 
      static getDerivedStateFromProps(props, state) {
         let pathName = props.location.pathname
-
+        console.log(pathName)
         switch (pathName) {
             case '/order/all':
                 return {
@@ -38,7 +37,7 @@ class OrderContainer extends PureComponent {
     }
 
     state = {
-        dNum : 0
+        dNum : 7
     }
 
     render() {
@@ -57,6 +56,8 @@ class OrderContainer extends PureComponent {
             path={path}
             handleClick={this.handleClick}
             list={obj}
+            dNum={this.state.dNum}
+
             >
             
             </OrderUI>
@@ -65,7 +66,26 @@ class OrderContainer extends PureComponent {
 
     handleClick (tar) {
         let path = this.match.path
-        this.history.push(path + '/' + tar, {tar})
+        let tNum = 0
+        switch (tar) {
+            case 'all':
+                tNum = 0
+                break;
+            case 'unpaid' :
+                tNum = 1
+                break;
+            case 'shipped' :
+                tNum = 2
+                break;
+            case 'receiving' :
+                tNum = 3
+                break;
+            default: 
+                tNum = 0;
+                break;
+        }
+        let dir = this.dNum < tNum ? 'left' : 'right'
+        this.history.push(path + '/' + tar + "?dir=" + dir)
     }
 }
 

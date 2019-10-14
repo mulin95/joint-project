@@ -1,13 +1,20 @@
 import React, { PureComponent} from 'react'
 
+import animate from 'components/hoc/animate'
+
+import {withRouter} from 'react-router-dom'
+
+import ListUI from 'components/list/ListUI'
+
 class Receiving extends PureComponent {
     render() {
+        // console.log(this.props)
         return (
-            <div>
-                Receiving
-            </div>
+            <ListUI list={this.props.list}>
+
+            </ListUI>
         )
     }
 }
 
-export default Receiving
+export default withRouter(animate(Receiving))
