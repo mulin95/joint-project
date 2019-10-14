@@ -2,10 +2,13 @@ import React, { Component } from 'react'
 import Welcome from './styleLogin'
 
 class welcome extends Component{
+    constructor(){
+        super()
+    }
     render(){
         return (
             <Welcome>
-                欢迎来到会了么
+                {this.props.text}
             </Welcome>
         )
     }

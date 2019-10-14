@@ -7,7 +7,7 @@ const largeimgBack = styled.div`
     background:url('${largeimg}') no-repeat center center;
     border-radius:0.20rem;
     margin-left:0.32rem;
-   margin-top:0.24rem
+    margin-top:0.24rem
     p{
         color:#fff;
         font-size:0.16rem;

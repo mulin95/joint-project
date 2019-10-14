@@ -10,10 +10,10 @@ export default function views() {
       <TitleBack title='详情'/>
       <TitleBack title='商品列表' back/>
 
-      <TitleBack>
-        <button>click</button>
-      </TitleBack>
-      <TitleBack title='商品详情' back rightEvent={(props)=>{console.log(props)}}>
+      <TitleBack rightEvent={(arg)=>{arg.history.push('/order')}}>
+        clic
+      </TitleBack >
+      <TitleBack title='商品详情' back >
         <button>click</button>
       </TitleBack>
 
