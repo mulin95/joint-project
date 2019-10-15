@@ -8,7 +8,6 @@ import { TitleBackContainer } from './StyledBack'
 export default withRouter(function titleBack(props) {
   return (
     <TitleBackContainer>
-      {console.log(props)}
       <div>
         {
           props.title || ''

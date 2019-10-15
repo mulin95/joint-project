@@ -1,24 +1,29 @@
 import React from 'react';
 
 import TitleBack from 'components/titleBack/TitleBack'
+import Cell from 'components/communicate/Cell'
+import {Container} from '../Styled'
+import Input from '../component/Input'
 
 export default function views() {
   return (
-    <div>
-      <TitleBack />
-      <TitleBack back/>
+    <Container>
       <TitleBack title='详情'/>
-      <TitleBack title='商品列表' back/>
-
-      <TitleBack rightEvent={(arg)=>{arg.history.push('/order')}}>
-        clic
-      </TitleBack >
-      <TitleBack title='商品详情' back >
-        <button>click</button>
-      </TitleBack>
-
-
-      CommunicateContainer
-    </div>
+      <div>
+        <ul>
+          {
+            [1,2].map((item) => (
+              <Cell 
+                key={item} 
+                onHandleClick={() => {
+                  this.handleClick(item)
+                }}
+              />
+            ))
+          }
+        </ul>
+      </div>
+      <Input />
+    </Container>
   );
 }

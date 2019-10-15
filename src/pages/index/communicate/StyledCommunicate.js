@@ -38,6 +38,11 @@ const CommunicateContainer=styled.div`
   >div:nth-child(2){
     flex:1;
     overflow-y:scroll;
+    >ul{
+      >li:last-child::after{
+        border:none;
+      }
+    }
   }
 `
 
