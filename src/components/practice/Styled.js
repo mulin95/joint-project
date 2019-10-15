@@ -11,7 +11,7 @@ const center=`
   justify-content:center;
 `
 
-const Collection=styled.div`
+const CollectionContainer=styled.div`
   width:.5rem;
   height:.2rem;
   border-radius:.04rem;
@@ -28,5 +28,5 @@ const Collection=styled.div`
 `
 
 export {
-  Collection
+  CollectionContainer
 }

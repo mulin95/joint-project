@@ -16,14 +16,17 @@ export default class Practice extends Component {
     list:[
       {
         type:'math',
+        subject:'数学',
         img:mathImg
       },
       {
         type:'physics',
+        subject:'物理',
         img:physicsImg
       },
       {
         type:'chemistry',
+        subject:'化学',
         img:chemistryImg
       },
     ]

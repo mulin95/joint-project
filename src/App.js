@@ -26,7 +26,7 @@ function App() {
         <Route path='/profile' component={Profile}></Route>
         <Route path='/grade' component={Grade}></Route>
         <Route path='/search' component={Search}></Route>
-        <Route path='/practice/:type' component={Practice}></Route>
+        <Route path='/practice' component={Practice}></Route>
         <Redirect from='/' to='/index' exact></Redirect>
         <Route component={Page404}></Route>
       </Switch>

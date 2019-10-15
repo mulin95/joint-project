@@ -16,7 +16,7 @@ export default function views() {
               <Cell 
                 key={item} 
                 onHandleClick={() => {
-                  this.handleClick(item)
+                  console.log('我太难了，你别点了')
                 }}
               />
             ))
