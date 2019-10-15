@@ -3148,7 +3148,11 @@ cssstyle@^1.0.0, cssstyle@^1.1.1:
 
 csstype@^2.2.0, csstype@^2.6.6:
   version "2.6.7"
+<<<<<<< Updated upstream
   resolved "https://registry.npm.taobao.org/csstype/download/csstype-2.6.7.tgz#20b0024c20b6718f4eda3853a1f5a1cce7f5e4a5"
+=======
+  resolved "https://registry.npm.taobao.org/csstype/download/csstype-2.6.7.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcsstype%2Fdownload%2Fcsstype-2.6.7.tgz#20b0024c20b6718f4eda3853a1f5a1cce7f5e4a5"
+>>>>>>> Stashed changes
   integrity sha1-ILACTCC2cY9O2jhTofWhzOf15KU=
 
 customize-cra@^0.7.0:
@@ -8583,7 +8587,11 @@ react-scripts@3.1.2:
 
 react-transition-group@^4.3.0:
   version "4.3.0"
+<<<<<<< Updated upstream
   resolved "https://registry.npm.taobao.org/react-transition-group/download/react-transition-group-4.3.0.tgz?cache=0&sync_timestamp=1567691870257&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-transition-group%2Fdownload%2Freact-transition-group-4.3.0.tgz#fea832e386cf8796c58b61874a3319704f5ce683"
+=======
+  resolved "https://registry.npm.taobao.org/react-transition-group/download/react-transition-group-4.3.0.tgz#fea832e386cf8796c58b61874a3319704f5ce683"
+>>>>>>> Stashed changes
   integrity sha1-/qgy44bPh5bFi2GHSjMZcE9c5oM=
   dependencies:
     "@babel/runtime" "^7.5.5"
@@ -8601,7 +8609,11 @@ react-tween-state@^0.1.5:
 
 react@^16.10.2:
   version "16.10.2"
+<<<<<<< Updated upstream
   resolved "https://registry.npm.taobao.org/react/download/react-16.10.2.tgz#a5ede5cdd5c536f745173c8da47bda64797a4cf0"
+=======
+  resolved "https://registry.npm.taobao.org/react/download/react-16.10.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact%2Fdownload%2Freact-16.10.2.tgz#a5ede5cdd5c536f745173c8da47bda64797a4cf0"
+>>>>>>> Stashed changes
   integrity sha1-pe3lzdXFNvdFFzyNpHvaZHl6TPA=
   dependencies:
     loose-envify "^1.1.0"

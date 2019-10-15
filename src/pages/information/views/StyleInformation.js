@@ -5,57 +5,128 @@ const Div=styled.div`
     height:100%;
     overflow:hidden;
     overflow-y:scroll;
-   .bg1{
-       width:100%;
-       height:2.64rem;
-   }
-   .fit{
-       padding:.2rem .15rem 0;
-       width:100%;
-       .price{
-            display:flex;
-            align-items:flex-end;
-            height:.23rem;
+    display:flex;
+    flex:1;
+    flex-direction:column;
+    .main{
+        overflow:hidden;
+        overflow-y:scroll;
+        display:flex;
+        flex-direction:column;
+        .bg1{
             width:100%;
-            .price1{
-                color:#FF5C2F;
-                font-size:.17rem;
-                span{
-                    font-size:.11rem;
+            height:2.64rem;
+        }
+        .fit{
+            padding:.2rem .15rem 0;
+            width:100%;
+            .price{
+                    display:flex;
+                    align-items:flex-end;
+                    height:.23rem;
+                    width:100%;
+                    .price1{
+                        color:#FF5C2F;
+                        font-size:.17rem;
+                        span{
+                            font-size:.11rem;
+                        }
+                    }
+                    .vip{
+                        font-size:.12rem;
+                        color:#2F8AFF;
+                        .vipprice{
+                            margin-left:.15rem;
+                        }
+                        .vipp{
+                            margin-left:.05rem;
+                        }
+                    }
                 }
+                .title{
+                    font-size:.17rem;
+                    color:#333333;
+                    margin-top:.03rem;
+                }
+                .fitgrade{
+                    margin-top:.08rem;
+                    .grade1{
+                        background:#C8E0FF;
+                        border-radius:.02rem;
+                        padding:.02rem .08rem;
+                        font-size:.11rem;
+                        color:#2F8AFF;
+                        margin-right:.1rem;
+                    }
+                    .grade2{
+                        color:#2F8AFF;
+                        font-size:.14rem;
+                    }
+                }
+        }
+        .center{
+            display:flex;
+            flex-direction:column;
+            text-align:center;
+            justify-content:center;
+            .sdetail{
+                width:1.5rem;
+                height:.18rem;
+                margin-top:.2rem;
+                display:flex;
+                align-items:center;
             }
-            .vip{
-                font-size:.12rem;
-                color:#2F8AFF;
-                .vipprice{
-                    margin-left:.15rem;
-                }
-                .vipp{
-                     margin-left:.05rem;
-                }
+           .spt1{
+                width:2.95rem;
+                height:2.9rem;
+                margin-top:.2rem;
             }
         }
-        .title{
-            font-size:.17rem;
-            color:#333333;
-            margin-top:.03rem;
+        .spt2{
+            width:100%;
+            height:2.42rem;
         }
-        .fitgrade{
-            margin-top:.08rem;
-            .grade1{
-                background:#C8E0FF;
-                border-radius:.02rem;
-                padding:.02rem .08rem;
-                font-size:.11rem;
-                color:#2F8AFF;
-                margin-right:.1rem;
-            }
-            .grade2{
-                color:#2F8AFF;
-                font-size:.14rem;
+        .spt3{
+            width:100%;
+            height:2.67rem;
+        }
+        .spt4{
+            width:100%;
+            height:3.65rem;
+        }
+    }
+    .footer{
+        height:.49rem;
+        background:#fff;
+        padding:0 .18rem;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        .service{
+            display:flex;
+            align-items:center;
+            width:42%;
+            height:.49rem;
+            color:#666666;
+            font-size:.16rem;
+            img{
+                width:.18rem;
+                height:.18rem;
+                margin-right:.08rem;
             }
         }
-   }
+        .buy{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            width:58%;
+            height:.3rem;
+            background:linear-gradient(90deg,rgba(52,190,253,1) 0%,rgba(47,138,255,1) 100%);
+            border-radius:1rem;
+            color:#fff;
+            font-size:.16rem;
+        }
+    }
 `
 
 export{
