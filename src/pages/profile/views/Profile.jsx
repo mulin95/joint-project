@@ -10,7 +10,8 @@ import {Order}    from 'pages/order/index';
 import Address  from './components/address/Address';
 import Member   from './components/Member';
 import Service  from './components/Service';
-import SetUp    from './components/SetUp';
+import SetUp    from './components/setUp/SetUp';
+import User     from './components/user/User';
 
 
 class Profile extends Component {
@@ -24,6 +25,7 @@ class Profile extends Component {
                 <Route path={path + '/member'}  component={Member}></Route>
                 <Route path={path + '/service'} component={Service}></Route>
                 <Route path={path + '/setup'}   component={SetUp}></Route>
+                <Route path={path + '/user'}   component={User}></Route>
             </Switch>
         );
     }

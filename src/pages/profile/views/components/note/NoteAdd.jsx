@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 
 import TitleBack from 'components/titleBack/TitleBack'
 import {NoteAddCom} from './StyleNote'
+import { Toast, WhiteSpace, WingBlank, Button } from 'antd-mobile'
 
 class NoteAdd extends Component {
     render() {
         return (
             <NoteAddCom>
-                <TitleBack back title="添加" rightEvent={this.handlerFinish}>
-                    <span>完成</span>
+                <TitleBack back title="添加">
+                    <WingBlank className="and-com">
+                        <WhiteSpace />
+                            <Button onClick={this.successToast}>完成</Button>
+                    </WingBlank>
                 </TitleBack>
                 <form action="">
                     <p>
@@ -21,9 +25,10 @@ class NoteAdd extends Component {
             </NoteAddCom>
         )
     }
-    handlerFinish(props){
-        // console.log(props)
-        props.history.goBack();
+    successToast=()=> {
+        Toast.success('添加笔记成功', 0.6,()=>{
+            this.props.history.goBack();
+        });
     }
 }
 
