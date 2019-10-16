@@ -21,6 +21,7 @@ import topBar from 'images/topBar.png'
 
 export default class Contents extends PureComponent{
   render(){
+    let {history}=this.props
     // console.log(this.props)
       return(
         <ContentsContainer>
@@ -43,7 +44,7 @@ export default class Contents extends PureComponent{
                 <img src={y} alt=""/>
                 <span>易错练习</span>
               </li>
-              <li>
+              <li onClick={()=>history.push("/qualityInformation")}>
                 <img src={j} alt=""/>
                 <span>精品资料</span>
               </li>
