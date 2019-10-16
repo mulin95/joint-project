@@ -41,6 +41,27 @@ const NoteHeader = border({
 })
 
 const NoteAddCom = styled.div`
+    .right{
+        .and-com{
+            margin-left:0;
+            margin-right:0;
+            .am-whitespace{
+                display:none;
+            }
+            .am-button{
+                height: 100%;
+                line-height: 100%;
+                border:none;
+                span{
+                    color:#666;
+                    font-size:.14rem;
+                }
+            }
+            .am-button::before{
+                border:none;
+            }
+        }
+    }
     inp{
         
     }

@@ -1,14 +1,27 @@
 import styled from 'styled-components';
 
-const NavPage=styled.div`
-  height:100%;
-  background:#fff;
-  display:flex;
-  flex-direction:column;
+const bg=`
+height:100%;
+display:flex;
+flex-direction:column;
+background:#fff;
+>div:nth-child(2){
+  flex:1;
+  overflow-y:scroll;
+}
+`
+
+const TopicContainer=styled.div`
+  ${bg}
+`
+const CollectContainer=styled.div`
+  ${bg}
+`
+
+const SubjectContainer=styled.div`
+  ${bg}
   >div:nth-child(2){
-    flex:1;
     padding:0 .15rem;
-    overflow-y:scroll;
     h2{
       color:#333333;
       font-size:.17rem;
@@ -63,5 +76,7 @@ const NavPage=styled.div`
 `
 
 export{
-  NavPage
+  SubjectContainer,
+  CollectContainer,
+  TopicContainer
 }

@@ -55,8 +55,59 @@ const AddressListCom = styled.div`
         }
     }
 `
+const AddressAddCom = styled.div`
+    height:100%;
+    background:#fff;
+    .title{
+        border-bottom:1px solid #E9E9E9;
+    }
+    .right{
+        .and-com{
+            margin-left:0;
+            margin-right:0;
+            .am-whitespace{
+                display:none;
+            }
+            .am-button{
+                height: 100%;
+                line-height: 100%;
+                border:none;
+                span{
+                    color:#666;
+                    font-size:.14rem;
+                }
+            }
+            .am-button::before{
+                border:none;
+            }
+        }
+    }
+    form{
+        padding:.26rem .15rem 0 .15rem;
+        label{
+            display:block;
+            color:#333;
+            font-size:.14rem;
+            line-height:.2rem;
+            font-weight:bold;
+            input{
+                border:none;
+                border-bottom:1px solid #E9E9E9;
+                width:100%;
+                height:.4rem;
+                color:#333;
+                font-size:.16rem;
+                line-height:.4rem;
+                padding-left:.1rem;
+                margin-bottom:.26rem;
+            }
+        }
+    }
+`
+
 
 
 export{
-    AddressListCom
+    AddressListCom,
+    AddressAddCom
 }
