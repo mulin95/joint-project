@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import {SetUpListCom} from './StyledSetUp'
-import TitleBack from 'components/titleBack/TitleBack'
+import TitleCom from '../titleCom/TitleCom'
 import account   from 'assets/profileImages/account.png'
 import about   from 'assets/profileImages/about.png'
 import arrow from 'assets/profileImages/arrow-note.png'
@@ -25,7 +25,7 @@ class SetUpList extends Component {
     render() {
         return (
             <SetUpListCom>
-                <TitleBack className="header" title="设置"/>
+                <TitleCom title="设置"/>
                 <ul>
                     {
                         setList.map((item)=>{
@@ -39,6 +39,9 @@ class SetUpList extends Component {
                         })
                     }
                 </ul>
+                <div className="title">
+                    会了么
+                </div>
             </SetUpListCom>
         )
     }

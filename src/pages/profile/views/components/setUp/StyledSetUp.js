@@ -3,9 +3,7 @@ import styled from 'styled-components';
 const SetUpListCom = styled.div`
     background:#fff;
     height:100%;
-    .header{
-        border-bottom:1px solid #F4F4F4;
-    }
+    position: relative;
     ul{
         padding:0 .15rem;
         li{
@@ -30,6 +28,16 @@ const SetUpListCom = styled.div`
                 height:.2rem;
             }
         }
+    }
+    .title{
+        position: absolute;
+        font-size:.36rem;
+        left:50%;
+        top:80%;
+        transform:translate(-50%,-50%);
+        background: linear-gradient(to right, #37B2FE, #2F8AFF);
+        -webkit-background-clip: text;
+        color: transparent;
     }
 `
 

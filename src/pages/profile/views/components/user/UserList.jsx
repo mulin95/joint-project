@@ -4,6 +4,7 @@ import {UserListCom} from './StyledUser'
 import TitleBack from 'components/titleBack/TitleBack'
 import user_5   from 'assets/profileImages/user-5.png'
 import arrow from 'assets/profileImages/arrow-note.png'
+import ButtonCom from '../titleCom/ButtonCom'
 
 class UserList extends Component {
     render() {
@@ -44,6 +45,7 @@ class UserList extends Component {
                         <img className="arrow" src={arrow} alt=""/>
                     </li>
                 </ul>
+                <ButtonCom title="退出登录" bottom=".6"/>
             </UserListCom>
         );
     }

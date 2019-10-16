@@ -8,7 +8,7 @@ import {
 import Note     from './components/note/Note';
 import {Order}    from 'pages/order/index';
 import Address  from './components/address/Address';
-import Member   from './components/Member';
+import Member   from './components/member/Member';
 import Service  from './components/Service';
 import SetUp    from './components/setUp/SetUp';
 import User     from './components/user/User';
