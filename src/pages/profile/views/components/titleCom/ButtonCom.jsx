@@ -8,7 +8,7 @@ class ButtonCom extends Component {
         return (
             <ButtonContainer 
                 style={{bottom:this.props.bottom + 'rem'}}
-                onClick={()=>this.props.clickBtn()}
+                onClick={()=>this.props.clickBtn && this.props.clickBtn()}
                 >
                 <div>
                     <span>

@@ -97,8 +97,78 @@ const TitleCom = styled.div`
     }
 `
 
+const UserNameCom = styled.div` 
+    height: 100%;
+    background: #FFFFFF;
+    .user{
+        padding: 0 .15rem;
+        height:.6rem;
+        padding-top:.2rem;
+        p{
+            display:flex;
+            align-items:center;
+            border-bottom:1px solid #E9E9E9;
+            input{
+                color:#4E4E4E;
+                font-size:.16rem;
+                flex:1;
+                border:none;
+                height:.36rem;
+                line-height:.36rem;
+            }
+            a::before{
+                border:none;
+            }
+            span{
+                color:#666;
+                font-size:.14rem;
+            }
+        }
+    }
+    >p{
+        padding-top:.3rem;
+        padding-left:.15rem;
+        img{
+            width:.16rem;
+            height:.16rem;
+            margin-right:.1rem;
+            margin-top:-.02rem;
+        }
+        span{
+            color:#979797;
+            font-size:.14rem;
+        }
+    }
+`
+
+const UserTelCom = styled.div`
+    height: 100%;
+    background: #FFFFFF;
+    .content{
+        padding:.6rem .2rem 0;
+        text-align:center;
+        p{
+            color:#BDBDBD;
+            font-size:.16rem;
+            margin-bottom:.15rem;
+        }
+        div{
+            color:#333;
+            font-size:.24rem;
+            font-weight:bold;
+            margin-bottom:.15rem;
+        }
+        span{
+            color:#979797;
+            font-size:.14rem;
+        }
+    }
+`
+
 export{
     UserListCom,
     UserAboutCom,
-    TitleCom
+    TitleCom,
+    UserNameCom,
+    UserTelCom
 }

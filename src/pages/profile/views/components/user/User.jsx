@@ -8,6 +8,8 @@ import {
 
 import UserList from './UserList';
 import UserAbout from './UserAbout';
+import UserAddName from './UserAddName';
+import UserTel from './UserTel'
 
 class User extends Component {
     render() {
@@ -16,6 +18,8 @@ class User extends Component {
             <Switch>
                 <Route path={path + '/list'} component={UserList}></Route>
                 <Route path={path + '/about'} component={UserAbout}></Route>
+                <Route path={path + '/add'} component={UserAddName}></Route>
+                <Route path={path + '/tel'} component={UserTel}></Route>
                 <Redirect from={path} to={path + '/list'}></Redirect>
             </Switch>
         );

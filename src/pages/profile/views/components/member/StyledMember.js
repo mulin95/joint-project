@@ -98,17 +98,144 @@ const MemberListCom = styled.div`
             }
         }
     }
-    .btn{
-        
-    }
 `
 
 const MemberOppenCom = styled.div`
-
+    height:100%;
+    background:#fff;
+    .user{
+        margin:.1rem .1rem 0 .1rem;
+        padding-bottom:.1rem;
+        height:.5rem;
+        display:flex;
+        align-items:center;
+        border-bottom:1px solid #E9E9E9;
+        >img{
+            width:.4rem;
+            height:.4rem;
+            margin-right:.1rem;
+        }
+        p{
+            .name{
+                font-weight:bold;
+                color:#666;
+                font-size:.18rem;
+                line-height:.25rem;
+                height:.25rem;
+            }
+            span{
+                color:#9E9E9E;
+                font-size:.16rem;
+            }
+            img{
+                width:.2rem;
+                height:.2rem;
+                margin-top:-.05rem;
+            }
+        }
+    }
+    .member{
+        margin-top:.35rem;
+        .vip{
+            margin-bottom:.13rem;
+            color:#333;
+            font-size:.18rem;
+            font-weight:500;
+            text-align:center;
+        }
+        >div{
+            margin:0 .08rem;
+            background:rgba(216, 216, 216, 0.3);
+            border-radius:.05rem;
+            padding-left:.08rem;
+            >div{
+                height:.4rem;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                padding-right:.2rem;
+                p{
+                    flex:1;
+                    color:#333;
+                    font-size:.14rem;
+                }
+                >i{
+                    letter-spacing:-.01rem;
+                    color:#666;
+                    font-size:.14rem;
+                    font-weight:bold;
+                }
+            }
+            .first{
+                height:.5rem;
+                p{
+                    flex:1;
+                    display:flex;
+                    flex-direction:column;
+                    justify-content:center;
+                    span{
+                        color:#333;
+                        font-size:.14rem;
+                    }
+                    em{
+                        color:#9e9e9e;
+                        font-size:.1rem;
+                    }
+                }
+            }
+        }
+    }
+    .title{
+        color:#9e9e9e;
+        font-size:.11rem;
+        padding:.12rem 0 0 .8rem;
+    }
 `
 
 const MemberBackCom = styled.div`
-
+    height:100%;
+    background:#fff;
+    posiotion:relative;
+    .user{
+        margin:.1rem .1rem 0 .1rem;
+        padding-bottom:.1rem;
+        height:.5rem;
+        display:flex;
+        align-items:center;
+        border-bottom:1px solid #E9E9E9;
+        >img{
+            width:.4rem;
+            height:.4rem;
+            margin-right:.1rem;
+        }
+        p{
+            h3{
+                color:#666;
+                font-size:.18rem;
+                line-height:.25rem;
+                height:.25rem;
+            }
+            span{
+                color:#9E9E9E;
+                font-size:.16rem;
+            }
+            img{
+                width:.2rem;
+                height:.2rem;
+                margin-top:-.05rem;
+            }
+        }
+    }
+    .title{
+        width:1.6rem;
+        height:.23rem;
+        color:#9E9E9E;
+        font-size:.16rem;
+        position: absolute;
+        left:50%;
+        top:45%;
+        transform: translate(-50%,-50%)
+    }
 `
 
 export {

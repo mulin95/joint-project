@@ -14,14 +14,20 @@ class NoteAdd extends Component {
                             <Button onClick={this.successToast}>完成</Button>
                     </WingBlank>
                 </TitleBack>
-                <form action="">
+                <div className="content">
                     <p>
-                        标题：<input className="inp" type="text" placeholder=""/>
+                        <span>标题：</span>
+                        <div>
+                            <input type="text" placeholder=""/>
+                        </div>
                     </p>
                     <p>
-                        内容：<textarea name="" id="" cols="30" rows="10"></textarea>
+                        <span>内容：</span>
+                        <div>
+                            <textarea></textarea>
+                        </div>
                     </p>
-                </form>
+                </div>
             </NoteAddCom>
         )
     }
