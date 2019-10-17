@@ -14,10 +14,11 @@ export default class Communicate extends Component {
       <CommunicateContainer>
         <div>
           问答交流
-          <div>
-            <div>
-              <img src={sou} alt=""/>
-            </div>
+          <div className='left' onClick={() => {this.handleClick('ask')}}>
+            提问
+          </div>
+          <div onClick={() => {this.handleClick('search')}}>
+            <img src={sou} alt=""/>
           </div>
         </div>
         <div>

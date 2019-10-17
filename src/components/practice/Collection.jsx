@@ -9,9 +9,11 @@ export default class Collection extends Component {
     isCollect:false
   }
   render() {
+    let {onCollect,open}=this.props
     return (
       <CollectionContainer onClick={() => {
-        this.props.open&&this.setState((state) => {
+        onCollect&&onCollect();
+        open&&this.setState((state) => {
           return{
             isCollect:!state.isCollect
           }

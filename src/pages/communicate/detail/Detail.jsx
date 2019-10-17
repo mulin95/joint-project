@@ -2,12 +2,13 @@ import React from 'react';
 
 import TitleBack from 'components/titleBack/TitleBack'
 import Cell from 'components/communicate/Cell'
-import {Container} from '../Styled'
-import Input from '../component/Input'
 
-export default function views() {
+import {Detail} from '../Styled'
+import InputBar from '../componet/InputBar'
+
+export default function() {
   return (
-    <Container>
+    <Detail>
       <TitleBack title='详情'/>
       <div>
         <ul>
@@ -23,7 +24,7 @@ export default function views() {
           }
         </ul>
       </div>
-      <Input />
-    </Container>
+      <InputBar />
+    </Detail>
   );
 }
