@@ -41,7 +41,6 @@ class OrderContainer extends PureComponent {
     }
 
     render() {
-        console.log(this.props)
     let path = this.props.match.path
     let obj = {
         topicImg: GoodImg,
@@ -90,7 +89,7 @@ class OrderContainer extends PureComponent {
         this.setState({
             dir
         })
-        this.props.history.push(path + '/' + tar + "?dir=" + dir)
+        this.props.history.push(path + '/' + tar)
     }
 }
 

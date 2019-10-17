@@ -16,7 +16,6 @@ import Receiving from '../component/Receiving'
 import Shipped from '../component/Shipped'
 
 const OrderUI = (props) => {
-    console.log(props)
     return (
         <Container>
             <TitleBack

@@ -2,12 +2,13 @@ import React from 'react'
 
 import { CSSTransition } from 'react-transition-group'
 
-export default (Comp) => {
-    return class extends React.PureComponent {
+import connect from './connect'
+
+let Animated = (Comp) => {
+    return connect( class extends React.PureComponent {
         render () { 
             let match = this.props.match
-            let dir = this.props.location.search.replace('?dir=', '')
-            console.log(this.props)
+            let dir = this.props.dir
             return (
             <CSSTransition
             in={!!match}
@@ -29,5 +30,7 @@ export default (Comp) => {
             </CSSTransition>
             )
         }
-    }
+    })
 }
+
+export default Animated
