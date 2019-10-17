@@ -7,7 +7,7 @@ export default (Comp) => {
         render () { 
             let match = this.props.match
             let dir = this.props.location.search.replace('?dir=', '')
-            console.log(dir)
+            console.log(this.props)
             return (
             <CSSTransition
             in={!!match}

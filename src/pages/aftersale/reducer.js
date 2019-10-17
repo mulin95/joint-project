@@ -1,9 +1,8 @@
-import { LOAD_DATA, LOAD_MORE_DATA, GET_DIR } from './actionTypes'
+import { LOAD_DATA, LOAD_MORE_DATA } from './actionTypes'
 import { Map } from 'immutable'
 
 const defaultState = Map({
-  list: [],
-  dir: ''
+  list: []
 })
 
 export default (state=defaultState, action) => {
@@ -12,8 +11,6 @@ export default (state=defaultState, action) => {
       return state.set('list', action.data)
     case LOAD_MORE_DATA:
       return state.set('list', state.get('list').concat(action.data))
-    case GET_DIR : 
-      return state.set('dir', action.data)
     default:
       return state
   }

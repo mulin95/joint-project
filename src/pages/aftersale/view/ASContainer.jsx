@@ -1,47 +1,38 @@
 import React, { PureComponent } from 'react'
 
 
-import OrderUI from './OrderUI'
+import ASUI from './ASUI'
 import connect from './connect'
 import GoodImg from 'images/good.jpg'
 
 @connect
-class OrderContainer extends PureComponent {
+class ASContainer extends PureComponent {
     constructor (props) {
         super(props) 
     }
 
-    state = {
-        dir: '',
-        dNum : 7
-    }
-
      static getDerivedStateFromProps(props, state) {
         let pathName = props.location.pathname
+        console.log(pathName)
         switch (pathName) {
-            case '/order/all':
+            case '/aftersale/sold':
                 return {
                     dNum : 0
                 };
-            case '/order/unpaid' :
+            case '/aftersale/service' :
                 return {
                     dNum : 1
-                };
-            case '/order/shipped' :
-                return {
-                    dNum : 2
-                };
-            case '/order/receiving' :
-                return {
-                    dNum : 3
                 };
             default: 
                 return null;
         }
     }
 
+    state = {
+        dNum : 7
+    }
+
     render() {
-        console.log(this.props)
     let path = this.props.match.path
     let obj = {
         topicImg: GoodImg,
@@ -53,45 +44,35 @@ class OrderContainer extends PureComponent {
         topicNumber: 7
     }
         return (
-            <OrderUI
+            <ASUI
             path={path}
             handleClick={this.handleClick}
             list={obj}
             dNum={this.state.dNum}
-            dir={this.state.dir}
+
             >
             
-            </OrderUI>
+            </ASUI>
         )
     }
 
-    handleClick = (tar) => {
-        let path = this.props.match.path
+    handleClick (tar) {
+        let path = this.match.path
         let tNum = 0
         switch (tar) {
-            case 'all':
+            case 'sold':
                 tNum = 0
                 break;
-            case 'unpaid' :
+            case 'service' :
                 tNum = 1
-                break;
-            case 'shipped' :
-                tNum = 2
-                break;
-            case 'receiving' :
-                tNum = 3
                 break;
             default: 
                 tNum = 0;
                 break;
         }
-        let dir = this.state.dNum < tNum ? 'left' : 'right'
-        this.props.getDir(dir)
-        this.setState({
-            dir
-        })
-        this.props.history.push(path + '/' + tar + "?dir=" + dir)
+        let dir = this.dNum < tNum ? 'left' : 'right'
+        this.history.push(path + '/' + tar + "?dir=" + dir)
     }
 }
 
-export default OrderContainer
+export default ASContainer
