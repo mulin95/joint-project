@@ -13,9 +13,40 @@ background:#fff;
 
 const TopicContainer=styled.div`
   ${bg}
+  .container{
+    padding:0 .1rem;
+    img{
+      width:100%;
+    }
+  }
 `
 const CollectContainer=styled.div`
   ${bg}
+  .container{
+    padding:0 .15rem;
+    display:flex;
+    flex-direction:column;
+    .empty{
+      flex:1;
+      >div{
+        height:3.36rem;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        img{
+          width:2.01rem;
+          height:2.07rem;
+        }
+        p{
+          margin-top:.2rem;
+          color:#666666;
+          font-size:.14rem;
+        }
+      }
+      
+    }
+  }
 `
 
 const SubjectContainer=styled.div`

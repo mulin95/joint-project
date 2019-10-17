@@ -1,16 +1,89 @@
 import styled from 'styled-components';
 import border from 'styled/border';
 
+const bg=`
+background:#fff;
+height:100%;
+display:flex;
+flex-flow:column;
+>div:nth-child(2){
+  flex:1;
+  overflow-y:scroll;
+}
+`
+const SearchContainer=styled.div`
+  ${bg}
+  .container{
+    padding:0 .15rem;
+    display:flex;
+    flex-direction:column;
+    .empty{
+      flex:1;
+      >div{
+        height:3.36rem;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        img{
+          width:2.01rem;
+          height:2.07rem;
+        }
+        p{
+          margin-top:.2rem;
+          color:#666666;
+          font-size:.14rem;
+        }
+      }
+      
+    }
+  }
+`
 
-const Container=styled.div`
-  background:#fff;
-  height:100%;
-  display:flex;
-  flex-flow:column;
+const AskContainer=styled.div`
+  ${bg}
   >div:nth-child(2){
     padding:0 .15rem;
-    flex:1;
-    overflow-y:scroll;
+    >div:nth-child(2){
+      margin-top:.18rem;
+      width:1.09rem;
+      height:1.09rem;
+      border:1px solid rgba(112,112,112,1);
+      color:#707070;
+      font-size:.11rem;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+  }
+`
+const InputContainer=border({
+  width:'0 0 1px',
+  comp:styled.div`
+    height:.3rem;
+    position: relative;
+    display:flex;
+    align-items:center;
+    input{
+      width:100%;
+      height:100%;
+      border:none;
+      color:#333;
+      font-size:.17rem;
+    }
+    img{
+      width:.11rem;
+      height:.11rem;
+      position: absolute;
+      right:0;
+    }
+  `
+})
+
+const Detail=styled.div`
+  ${bg}
+  >div:nth-child(2){
+    padding:0 .15rem;
     >ul{
       >li:last-child::after{
         border:none;
@@ -19,7 +92,7 @@ const Container=styled.div`
   }
 `
 
-const Input=border({
+const InputBar=border({
   width:'1px 0 0',
   comp:styled.div`
     height:.49rem;
@@ -65,6 +138,9 @@ const Input=border({
 })
 
 export{
-  Container,
-  Input
+  Detail,
+  InputBar,
+  AskContainer,
+  InputContainer,
+  SearchContainer
 }

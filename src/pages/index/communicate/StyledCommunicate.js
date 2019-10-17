@@ -13,25 +13,27 @@ const CommunicateContainer=styled.div`
     line-height:.44rem;
     font-size:.17rem;
     color:#333;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     >div{
       position:absolute;
-      top:0;
       right:0;
-      height:100%;
+      width:.5rem;
+      height:.24rem;
+      border:1px solid rgba(207,207,207,1);
+      border-radius:.04rem;
       display:flex;
+      justify-content:center;
       align-items:center;
-      >div{
-        width:.5rem;
-        height:.24rem;
-        background:#E9E9E9;
-        border-radius:.04rem;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        img{
-          width:.13rem;
-          height:.14rem;
-        }
+      img{
+        width:.13rem;
+        height:.14rem;
+      }
+      &.left{
+        left:0;
+        color:#B9B9B9;
+        font-size:.11rem;
       }
     }
   }
