@@ -5,13 +5,13 @@ import TitleBack from 'components/titleBack/TitleBack'
 
 //图片
 import arrow from '../../../assets/images/arrow.png'
+import book from 'images/book.png'
 
 //样式
 import {
     BuyBar,
     Div,
 } from './StyledBuy'
-
 
 export default class Buy extends PureComponent{
     render(){
@@ -35,7 +35,37 @@ export default class Buy extends PureComponent{
                     <img src={arrow} alt=""/>
                 </div>
                 <div className="freight">
-
+                    <div className="top">
+                        <img src={book} alt=""/>
+                        <div className="msg">
+                            <div className="name">商品商品商品商品商品商品商品商品商品商品</div>
+                            <div className="fit">适用年级</div>
+                        </div>
+                        <div className="price">
+                            <div className="price1">￥92</div>
+                            <div className="num">×1</div>
+                        </div>
+                    </div>
+                    <div className="middle">
+                        <div className="left">
+                            <div>购买数量</div>
+                            <div>运费险</div>
+                            <div>配送方式 <span>普通快递</span></div>
+                            <i>订单备注</i>
+                            <input type="text" placeholder="输入备注" />
+                        </div>
+                        <div className="right">
+                            <div>
+                                <button>-</button><i>1111</i><button>+</button>
+                            </div>
+                            <div className="song">平台送</div>
+                            <div className="song">免邮</div>
+                        </div>
+                    </div>
+                    <div className="bottom">
+                         <span className="num">共<i>1</i>件</span>
+                         <span className="money">小计：<i>￥92</i></span>
+                    </div>
                 </div>
             </div>
             <div className="footer">

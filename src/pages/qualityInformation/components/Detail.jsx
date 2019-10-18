@@ -1,15 +1,19 @@
 import React, { PureComponent } from 'react'
 
+import {withRouter} from 'react-router-dom'
+
 //样式
 import {Detaill} from './StyledC'
 
 //图片
 import book from 'images/book.png'
 
-export default class Detail extends PureComponent{
+class Detail extends PureComponent{
     render(){
+        let {history}=this.props
         return(
             <div>
+                <div onClick={()=>history.push("/information")}>
                 <Detaill>
                     <img src={book} alt=""/>
                     <div>
@@ -31,6 +35,7 @@ export default class Detail extends PureComponent{
                         </div>
                     </div>
                  </Detaill>
+                 </div>
                  <Detaill>
                     <img src={book} alt=""/>
                     <div>
@@ -99,3 +104,5 @@ export default class Detail extends PureComponent{
         )      
     }
 }
+
+export default withRouter(Detail)

@@ -64,6 +64,110 @@ const Div=styled.div`
             border-radius:.04rem;
             box-shadow:0px 0px 1px 0px rgba(0,0,0,0.5);
             margin-bottom:.1rem;
+            padding:.08rem .15rem 0;
+            display:flex;
+            flex-direction:column;
+            /* flex:1; */
+            .top{
+                display:flex;
+                img{
+                    width:.79rem;
+                    height:.97rem;
+                }
+                .msg{
+                    width:62%;
+                    height:.97rem;
+                    margin-left:.1rem;
+                    display:flex;
+                    flex-direction:column;
+                    padding-top:.22rem;
+                    font-size:.11rem;
+                    color:#333333;
+                    .fit{
+                        width:.6rem;
+                        height:.2rem;
+                        margin-top:.08rem;
+                        background:#C8E0FF;
+                        color:#2F8AFF;
+                        padding:.02rem .08rem;
+                        border-radius:.02rem;
+                    }
+                }
+                .price{
+                    width:38%;
+                    height:.97rem;
+                    display:flex;
+                    flex-direction:column;
+                    align-items:flex-end;
+                    padding-top:.22rem;
+                    font-size:.11rem;
+                    margin-left:.07rem;
+                    .num{
+                        color:#999999;
+                    }
+                }
+            }
+            .middle{
+                margin-top:.2rem;
+                display:flex;
+                font-size:.11rem;
+                color:#333333;
+                .left{
+                    width:76%;
+                    height:1.84rem;
+                    padding-left:.2rem;
+                    div,i{
+                        margin-bottom:.4rem;
+                        span{
+                            color:#999999;
+                            margin-left:.12rem;
+                        }
+                    }
+                    input{
+                        color:#999999;
+                        margin-left:.12rem;
+                        border:none;
+                        width:70%;
+                    }
+                }
+                .right{
+                    width:24%;
+                    height:1.84rem;
+                    display:flex;
+                    flex-direction:column;
+                    align-items:flex-end;
+                    button{
+                        border:1px solid #ccc;
+                        padding:.02rem .04rem; 
+                        background:#fff;
+                        color:#999999;
+                    }
+                    i{
+                        margin:0 .05rem;
+                    }
+                    .song{
+                        margin-top:.4rem;
+                    }
+                }
+            }
+            .bottom{
+                width:100%;
+                height:.2rem;
+                margin-top:.4rem;
+                font-size:.11rem;
+                display:flex;
+                justify-content:flex-end;
+                .num{
+                    color:#999999;
+                    margin-right:.06rem;
+                }
+                .money{
+                    color:#333;
+                    i{
+                        color:#2F8AFF;
+                    }
+                }
+            }
         }
     }
     .footer{

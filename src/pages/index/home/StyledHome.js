@@ -58,6 +58,7 @@ const Nav=border({
         color:#666666;
         font-size:.14rem;
         display:flex;
+        border-bottom:.02rem solid #fff;
         &.active{
             color:#2F8AFF;
             border-bottom:.02rem solid #2F8AFF;

@@ -52,9 +52,9 @@ const Detaill=border({
                     }
                 }
                 .price{
-                    height:.28rem;
+                    height:.45rem;
                     display:flex;
-                    justify-content:flex-end;
+                    align-items:flex-end;
                     .price1{
                         color:#FF5C2F;
                         font-size:.17rem;

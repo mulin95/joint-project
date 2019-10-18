@@ -1,5 +1,22 @@
 import styled from 'styled-components'
 
+const MEContainer=styled.div`
+    position: absolute;
+    width:100%;
+    top:0;
+    >div{
+        background:transparent;
+
+    }
+    .left{
+        background:rgba(0,0,0,.3);
+        border-radius:50%;
+        width:.3rem !important;
+        height:.3rem !important;
+        padding:.05rem;
+    }
+`
+
 const Div=styled.div`
     background:#fff;
     height:100%;
@@ -8,14 +25,18 @@ const Div=styled.div`
     display:flex;
     flex:1;
     flex-direction:column;
+    position: relative;
     .main{
         overflow:hidden;
         overflow-y:scroll;
         display:flex;
         flex-direction:column;
+        >div{
+            position: relative;
+        }
         .bg1{
             width:100%;
-            height:2.64rem;
+            height:16.3%;
         }
         .fit{
             padding:.2rem .15rem 0;
@@ -72,27 +93,25 @@ const Div=styled.div`
             .sdetail{
                 width:1.5rem;
                 height:.18rem;
-                margin-top:.2rem;
-                display:flex;
-                align-items:center;
+                margin-top:.25rem;
             }
            .spt1{
                 width:2.95rem;
                 height:2.9rem;
-                margin-top:.2rem;
+                margin-top:.25rem;
             }
         }
         .spt2{
             width:100%;
-            height:2.42rem;
+            height:16%;
         }
         .spt3{
             width:100%;
-            height:2.67rem;
+            height:17%;
         }
         .spt4{
             width:100%;
-            height:3.65rem;
+            height:21%;
         }
     }
     .footer{
@@ -130,5 +149,6 @@ const Div=styled.div`
 `
 
 export{
-    Div
+    Div,
+    MEContainer
 }
