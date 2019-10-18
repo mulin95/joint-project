@@ -10,7 +10,6 @@ const Detaill=border({
       img{
         width:.62rem;
         height:.76rem;
-        width:18%;
       }
       >div{
         width:82%;

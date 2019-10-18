@@ -52,7 +52,7 @@ export default class Information extends PureComponent{
                             </div>
                         </div>
                         <div className="center">
-                            <img src={sdetail} alt="" className="sdetail" />
+                            <div><img src={sdetail} alt="" className="sdetail" /></div>
                             <img src={spt1} alt="" className="spt1" />
                         </div>
                         <img src={spt2} alt="" className="spt2" />
