@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import TitleBack from 'components/titleBack/TitleBack'
+import {NoteShowCom} from'./StyleNote';
 
 class NoteShow extends Component {
     state = {
@@ -10,12 +11,12 @@ class NoteShow extends Component {
     }
     render() {
         return (
-            <div>
+            <NoteShowCom>
                 <TitleBack title={this.state.title} />
                 ID：  {this.state.id}<br/><br/>
                 标题：{this.state.title}<br/><br/>
                 内容：{this.state.text}<br/><br/>
-            </div>
+            </NoteShowCom>
         );
     }
     componentDidMount(){

@@ -1,11 +1,4 @@
-import { SAGA_LOAD_DATA, LOAD_DATA, LOAD_MORE_DATA, SAGA_LOAD_MORE_DATA, GET_DIR } from './actionTypes'
-
-export const getDir = (data) => {
-  return {
-    type: GET_DIR,
-    data
-  }
-}
+import { SAGA_LOAD_DATA, LOAD_DATA, LOAD_MORE_DATA, SAGA_LOAD_MORE_DATA } from './actionTypes'
 
 export const sagaLoadData = () => {
   return {

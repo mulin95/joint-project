@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import {AddressListCom} from './styledAddress'
 import TitleBack from 'components/titleBack/TitleBack'
+import ButtonCom from '../titleCom/ButtonCom'
 
 import user from 'assets/profileImages/user.png';
 import user_2 from 'assets/profileImages/user-2.jpg';
@@ -55,6 +56,7 @@ class AddressList extends Component {
                         })
                     }
                 </ul>
+            <ButtonCom title="添加新的收获地址" bottom="1.6"/>
             </AddressListCom>
         );
     }
