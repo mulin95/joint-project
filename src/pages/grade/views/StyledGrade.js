@@ -23,27 +23,32 @@ const GradeContainer=border({
               justify-content:space-between;
               flex:1;
               button{
-              width:.9rem;
-              height:.3rem;
-              text-align:center;
-              line-height:.3rem;
-              background:#C8E0FF;
-              border-radius:.04rem;
-              color:#2F8AFF;
-              font-size:.14rem;
-              border:1px solid #2F8AFF;
-              margin-top:.28rem;
+                width:.9rem;
+                height:.3rem;
+                text-align:center;
+                line-height:.3rem;
+                background:#C8E0FF;
+                border-radius:.04rem;
+                color:#2F8AFF;
+                font-size:.14rem;
+                border:1px solid #2F8AFF;
+                margin-top:.28rem;
              }
           }
         }
-        .back{
-            width:82%;
-            height:.4rem;
-            background:linear-gradient(90deg,rgba(52,190,253,1) 0%,rgba(47,138,255,1) 100%);
-            border-radius:1rem;
-            border:none;
-            color:#fff;
-            margin-top:.6rem;          
+        .btn{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            .back{
+                width:82%;
+                height:.4rem;
+                background:linear-gradient(90deg,rgba(52,190,253,1) 0%,rgba(47,138,255,1) 100%);
+                border-radius:1rem;
+                border:none;
+                color:#fff;
+                margin-top:.6rem;
+            }
         }
    `
 })

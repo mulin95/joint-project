@@ -31,7 +31,9 @@ export default class Grade extends Component{
                    </div>
                 </div>
 
-                <button className="back">完成，进入会了么</button>
+                <div className="btn">
+                    <button className="back">完成，进入会了么</button>
+                </div>
                 
             </GradeContainer>
             </>
