@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useCallback,useState} from 'react'
 
 import { CellContainer } from './Styled'
 
@@ -12,30 +12,52 @@ import wen from 'cmcimg/wen.png'
 
 
 function Cell(props) {
+
+  let [stateZan,setZan]=useState(false)
+
+  const handleZan=useCallback(() => {
+    setZan(!stateZan)
+  })
+
   return (
-    <CellContainer onClick={props.onHandleClick}>
-      <div className='user'>
-        <img src="https://upload-images.jianshu.io/upload_images/18592265-469b282293df3f1e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+    <CellContainer >
+      <div className='user' onClick={props.onJump}>
+        <img src={props.user.headPortrait} alt="" />
         <div>
-          <p>昵称昵称昵称昵称昵称</p>
-          <p>00:00</p>
+          <p>{props.user.userNickName}</p>
+          <p>{props.requestionTime||props.answerTime}</p>
         </div>
       </div>
-      <div className='content'>
+      <div className='content' onClick={props.onJump}>
         <p>
           <img src={wen} alt="" />
           <span>
-            题目题目题目题目题目题目题目题目题目？
+          {props.requestionTitle||props.answerTitle}
           </span>
         </p>
         <div>
-          <img src="https://upload-images.jianshu.io/upload_images/18592265-af141a0743887bb1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+          <img src={props.answerQuestions||props.theQuestionAnswer} alt="" />
         </div>
       </div>
       <ul className='foot'>
-        <li><p><img src={true?kan:kanA} alt="" /></p><span>1.1万</span></li>
-        <li><p><img src={true?ping:pingA} alt="" /></p><span>100</span></li>
-        <li><p><img src={false?zan:zanA} alt="" /></p><span>100</span></li>
+        <li>
+          <p>
+            <img src={false?kanA:kan} alt="" />
+          </p>
+          <span>{props.reqPageview||props.ansPageview}</span>
+        </li>
+        <li onClick={props.onJump}>
+          <p>
+            <img src={false?pingA:ping} alt="" />
+          </p>
+          <span>{props.reqCommentnum}</span>
+        </li>
+        <li onClick={handleZan}>
+          <p>
+            <img src={stateZan?zanA:zan} alt="" />
+          </p>
+          <span>{props.reqLikenum-0+(stateZan?1:0)}</span>
+        </li>
       </ul>
     </CellContainer>
   )

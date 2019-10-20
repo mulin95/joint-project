@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route,Switch,Redirect } from 'react-router-dom';
+import { Route,Switch,Redirect,withRouter } from 'react-router-dom';
 
 import 'styles/reset.css'
 import 'styles/animate.css'
@@ -19,7 +19,7 @@ import Index from 'pages/index/Index';
 import Login from 'pages/login/index';
 import Page404 from 'components/Page404.jsx';
 
-function App() {
+function App(props) {
   return (
     <>
       <Switch>
@@ -27,7 +27,7 @@ function App() {
         {/* <Route path='/detail' component={Detail}></Route> */}
         <Route path='/login' component={Login}></Route>
         <Route path='/order' component={Order}></Route>
-        <Route path='/communicate/:id' component={Communicate}></Route>
+        <Route path='/communicate' component={Communicate}></Route>
         <Route path='/profile' component={Profile}></Route>
         <Route path='/grade' component={Grade}></Route>
         <Route path='/search' component={Search}></Route>
@@ -43,4 +43,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
