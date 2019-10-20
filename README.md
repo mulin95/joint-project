@@ -19,6 +19,7 @@
 9. fetch
 10. antd-mobile
 11. better-scroll
+12. react-transition-group
 
 
 ## 路由
@@ -26,17 +27,17 @@
 #### 首页
 
 ```
-/index/home				首页
+/index/home			首页
 /index/practice		练习室
 /index/communicate	交流室
-/index/profile			我的
+/index/profile		我的
 ```
 
 #### 查找
 
 ```
 /search/grade		年级
-/search/subject	科目
+/search/subject	  科目
 /search/text		搜索
 ```
 
@@ -56,7 +57,7 @@
 #### 订单
 
 ```
-/order/all			全部
+/order/all		全部
 /order/unpaid		未付款
 /order/shipped		待发货
 /order/receiving	待收货
@@ -72,8 +73,11 @@
 #### 练习交流室
 
 ```
-/practice		练习室
-/communicate	交流室
+/practice	  练习室
+/practice/collect 收藏
+/practice/topic/[id] 练习
+/practice/[subject] 科目
+/communicate	  交流室
 ```
 
 #### 登陆注册
@@ -81,7 +85,7 @@
 ```
 /login		登陆
 /signup		注册
-/edit			编辑修改
+/edit		编辑修改
 ```
 
 #### 账户中心

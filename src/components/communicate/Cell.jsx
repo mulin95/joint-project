@@ -11,9 +11,9 @@ import zanA from 'cmcimg/zanA.png'
 import wen from 'cmcimg/wen.png'
 
 
-function Cell() {
+function Cell(props) {
   return (
-    <CellContainer>
+    <CellContainer onClick={props.onHandleClick}>
       <div className='user'>
         <img src="https://upload-images.jianshu.io/upload_images/18592265-469b282293df3f1e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
         <div>

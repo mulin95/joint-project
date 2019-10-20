@@ -1,4 +1,4 @@
-import Communicate from './views/CommunicateContainer';
+import Communicate from './Communicate';
 
 export {
   Communicate

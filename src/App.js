@@ -7,6 +7,14 @@ import 'styles/animate.css'
 import {Order} from 'pages/order/';
 import {Communicate} from 'pages/communicate/';
 import {Profile}  from 'pages/profile/';
+import {Grade} from 'pages/grade/';
+import {Search} from 'pages/search/';
+import {Practice} from 'pages/practice/';
+import {QualityInformation} from 'pages/qualityInformation/';
+import {MiddleExercises} from 'pages/middleExercises/';
+import {Information} from 'pages/information/';
+import {Buy} from 'pages/buy/index.js';
+
 import Index from 'pages/index/Index';
 import Login from 'pages/login/index';
 import Page404 from 'components/Page404.jsx';
@@ -21,6 +29,13 @@ function App() {
         <Route path='/order' component={Order}></Route>
         <Route path='/communicate/:id' component={Communicate}></Route>
         <Route path='/profile' component={Profile}></Route>
+        <Route path='/grade' component={Grade}></Route>
+        <Route path='/search' component={Search}></Route>
+        <Route path='/practice' component={Practice}></Route>
+        <Route path='/qualityInformation' component={QualityInformation}></Route>
+        <Route path='/middleExercises' component={MiddleExercises}></Route>
+        <Route path='/information' component={Information}></Route>
+        <Route path='/buy' component={Buy}></Route>
         <Redirect from='/' to='/index' exact></Redirect>
         <Route component={Page404}></Route>
       </Switch>
