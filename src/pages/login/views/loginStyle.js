@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const loginContaniner = styled.div`
-    overflow:hidden;
+    overflow:scroll;
     background:#fff;
     width:100%;
     height:100%;
@@ -33,7 +33,7 @@ const loginContaniner = styled.div`
             color:#CFCFCF;
             }
     }  
-    img{
+    .VLine{
         margin-left:0.32rem;
         margin-top:0.09rem;
         display:block;
@@ -53,17 +53,16 @@ const loginContaniner = styled.div`
         color:#000;
         text-align:center;
         margin-top:1.91rem;
+        margin-bottom:0.24rem;
     }
-    .email{
+    #email{
         margin-top:0.24rem;
         width:0.36rem;
         height:0.36rem;
-        margin:0.24rem auto 0;
-    }
-    #email{
+        margin:0.07rem auto 0;
         text-align:center;
-        margin-top:0.07rem;
         font-size:11px;
+        
     }
     .skip{
         font-size:0.14rem;

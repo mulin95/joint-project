@@ -6,28 +6,32 @@ class largeButton extends React.Component {
     constructor() {
         super()
         this.state = {
+
         }
     }
     render() {
         return (
-            <LargeButtonContainer onClick={this.getVerify}>
-                <p>{this.props.text}</p>
+            <LargeButtonContainer onClick={this.getVerify} className="btn">
+                <p>{this.props.retry === false ? this.props.text : this.props.retryText}</p>
             </LargeButtonContainer>
         )
     }
 
     getVerify = () => {
- 
-            this.props.history.push(this.props.skipToGetVerify.rout)
-      
-    }
+        if (this.props.retry === false) {
+            if (this.props.rout === "wu") {
+                console.log("正式登陆")
+                return
+            } else {
+                this.props.history.push(this.props.skipToGetVerify.rout)
+            }
+        } else if (this.props.retry === true) {
+            this.props.history.push('/login')
+        }
 
-    // login = () => {
-    //     console.log(1)
-    //     this.setState({
-    //         retry: !this.state.retry
-    //     })
-    // }
+    }
+// https://www.jianshu.com/p/0fa8c7456c15
+
 
 
 
