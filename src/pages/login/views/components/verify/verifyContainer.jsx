@@ -15,58 +15,76 @@ class Verify extends PureComponent {
         super()
         this.state = {
             verifyLine: [0, 1, 2, 3],
-            loading: true,
+            loading: false,
             yztime: 59,
-            retry: false
+            retry: false,
+            retryText: "重新发送验证码",
+            inputClick: 0,
+            siv: null
         }
     }
-    // count = () => {
-    //     let { yztime } = this.state;
-    //     let siv = setInterval(() => {
-    //         this.setState({ yztime: (yztime--) }, () => {
-    //             if (yztime <= 0) {
-    //                 clearInterval(siv);　　//倒计时( setInterval() 函数会每秒执行一次函数)，用 clearInterval() 来停止执行:
-    //                 this.setState({ loading: true, yztime: 59 })
-    //             }
-    //         });
-    //     }, 1000);
-    // }
 
-
+    componentDidMount() {
+        this.count()
+    }
     count = () => {
-        console.log(1)
-        let siv = setInterval(() => {
-            this.setState()
-        },1000)
+        
+        this.state.siv = setInterval(() => {
+            let tem = this.state.yztime
+            this.setState({
+                yztime: --tem,
+            }, () => {
+                if (this.state.yztime <= 0) {
+                    clearInterval(this.state.siv)
+                    this.setState({
+                        retry: !this.state.retry,
+                    })
+                }
+            })
+
+        }
+            , 1000)
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.state.siv)
     }
     render() {
-
         return (
-            <>
-
-                <VerifyContanier>
-                    <Back></Back>
-                    <Welcome text="输入验证码"></Welcome>
-                    <Tip text="验证码已发送至您的手机"></Tip>
-                    <div className="verifyLineContainer">
-                        {
-                            this.state.verifyLine.map((value, index) => (
-                                <img key={value} className="verifyLine" src={verifyLine} alt="" />
-                            ))
-                        }
-                    </div>
-                    <p>
-                        {this.count()}秒后重试
-                        </p>
-                    <LargeButton text="登录/注册" ></LargeButton>
-                </VerifyContanier>
-
-            </>
+            <VerifyContanier>
+                <Back></Back>
+                <Welcome text="输入验证码"></Welcome>
+                <Tip text="验证码已发送至您的手机"></Tip>
+                <div className="verifyLineContainer">
+                    {
+                        this.state.verifyLine.map((value, index) => (
+                            <div className="verifyLineDiv" key={value}>
+                                <input onClick={() => {
+                                    this.verifyLineInput()
+                                }}
+                                    maxLength="1"
+                                    key={value + 1}
+                                    type="text"
+                                    className="verifyLineInput"
+                                />
+                                <img key={value + 2} className="verifyLine" src={verifyLine} alt="" />
+                            </div>
+                        ))
+                    }
+                </div>
+                <p className="secondRetry">
+                    {this.state.yztime}秒后重试
+                    </p>
+                {/* retry表示返回发送验证码界面 */}
+                <LargeButton  Submit={this.verifySubmit}text="登录/注册" retry={this.state.retry} retryText={this.state.retryText} rout={"wu"} ></LargeButton>
+            </VerifyContanier>
         )
     }
-
-
-
+    verifyLineInput=() => {
+        this.setState({
+            verifyLineInput:++this.state.verifyLineInput
+        })
+    }
 }
 
 export default withRouter(Verify) 

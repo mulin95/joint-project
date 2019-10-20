@@ -1,49 +1,42 @@
 import Styled from 'styled-components'
 const VerifyContanier = Styled.div`
     
-    
+    overflow:scroll;
     background:#fff;
     width:100%;
     height:100%;
     display:flex;
     flex-direction:column;
-   .verifyLine{
-       flex:1
-       display:inline;
-       margin-top:72px;
-   }
-    input{
+   .secondRetry{
+    margin-top:0.33rem;
+    margin-left:0.32rem;
+    }
+    .verifyLineContainer{
+        display:flex;
+        align-self:center
+        width:2.84rem;
         
-        max-width:60%;
-        height:0.20rem;
-        font-size:14px;
-        font-family:PingFangHK-Regular,PingFangHK;
-        font-weight:400;
-        color:#000;
-        line-height:0.20rem;
-        border:none;
-        margin-top:0.43rem;
-        margin-left:0.32rem;
-            &::-webkit-input-placeholder{
-            color:#CFCFCF;
+        .verifyLineDiv{
+            flex:1
+            width:0.55rem;
+            height:0.70rem;
+            position:relative;
+            margin:0;
+            display:flex;
+            flex-direction:column;
+            justify-content:flex-end;
+            .verifyLineInput{
+                align-self:center
+                width:0.20rem;
+                border:0;
+                align-self:center;
             }
-            &::-moz-placeholder{
-            color:#CFCFCF;
+            .verifyLine{
+                margin:0 0.08rem 0 0.08rem
+                width:0.55rem;
+                display:inline; 
             }
-            &::-moz-placeholder{
-            color:#CFCFCF;
-            }
-            &::-ms-input-placeholder{
-            color:#CFCFCF;
-            }
-    }  
-    .verifyLine{
-        margin-left:0.32rem;
-        margin-top:0.72rem;
-        display:inline-block;
-        max-width:83%;
-        height:0.02rem;
-
+        }
     }
     .passw{
         font-size:0.14rem;

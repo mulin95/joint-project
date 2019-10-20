@@ -36,6 +36,7 @@ export default class Practice extends Component {
   }
 
   render() {
+    this.props.history.listen((e) => {console.log(e)})
     return (
       <PracticeContainer>
         <Title></Title>

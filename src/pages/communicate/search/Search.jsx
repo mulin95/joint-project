@@ -33,7 +33,10 @@ export default class Search extends Component {
               <ul>
                 {
                   this.state.items.map((item) => (
-                    <Cell key={item}></Cell>
+                    <Cell 
+                      key={item}
+                      {...item}
+                    ></Cell>
                   ))
                 }
               </ul>
