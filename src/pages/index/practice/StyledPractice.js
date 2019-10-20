@@ -26,7 +26,7 @@ const center=`
 
 const Item=border({
   width:'0 0 1px',
-  comp:styled.div`
+  comp:styled.li`
     padding:.06rem 0;
     display:flex;
     >img{
@@ -93,6 +93,11 @@ const PracticeContainer=styled.div`
   .container{
     flex:1;
     overflow-y:scroll;
+    >ul{
+      >li:last-child::after{
+        border:none;
+      }
+    }
   }
   .banner{
     padding: .1rem 0 .12rem;

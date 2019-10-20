@@ -15,20 +15,20 @@ const ListUI = (props) => {
                         {props.list.applyGrade}
                     </b>
                     <p>
-                        <span class="cate">
+                        <span className="cate">
                             {props.list.topicSketch}
                         </span>
-                        <span class="VIPprice">
+                        <span className="VIPprice">
                             ￥{props.list.VIPPrice} VIP
                         </span>
-                        <span class="price">
+                        <span className="price">
                             ￥
                             <span>
                             {props.list.price}
                             </span>
                         </span>
                     </p>
-                    <div class="total">
+                    <div className="total">
                         X {props.list.topicNumber}
                     </div>
                 </li>

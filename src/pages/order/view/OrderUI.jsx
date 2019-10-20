@@ -1,7 +1,8 @@
 import React from 'react'
 
 import { NavBar, Icon } from 'antd-mobile';
-import { TabBarContainer, ListBody } from './StyledOrder'
+import TitleBack from 'components/titleBack/TitleBack';
+import { TabBarContainer, ListBody,Container } from './StyledOrder'
 
 import {
     Route,
@@ -15,14 +16,11 @@ import Receiving from '../component/Receiving'
 import Shipped from '../component/Shipped'
 
 const OrderUI = (props) => {
-    console.log(props.list)
     return (
-        <div>
-            <NavBar
-            mode='light'
-            icon={<Icon type = 'left'></Icon>}
-
-            >我的订单</NavBar>
+        <Container>
+            <TitleBack
+            title='我的订单'
+            ></TitleBack>
             <TabBarContainer>
                 <ul>
                     <li onClick = {() => props.handleClick('all')}>全部</li>
@@ -33,12 +31,12 @@ const OrderUI = (props) => {
             </TabBarContainer>
 
             <ListBody>
-            <Route path={`${props.path}/all`} children={(prop) => <All list={props.list} ph="sb"></All>}></Route>
-            {/* <Route path={`${props.path}/unpaid`} children={(props) => <Unpaid></Unpaid>}></Route> */}
-            {/* <Route path={`${props.path}/shipped`} children={(props) => <Shipped></Shipped>}></Route> */}
-            {/* <Route path={`${props.path}/receiving`} children={(props) => <Receiving></Receiving>}></Route> */}
+            <Route path={`${props.path}/all`} children={(prop) => <All list={props.list}></All>}></Route>
+            <Route path={`${props.path}/unpaid`} children={(prop) => <Unpaid list={props.list}></Unpaid>}></Route>
+            <Route path={`${props.path}/shipped`} children={(prop) => <Shipped list={props.list}></Shipped>}></Route>
+            <Route path={`${props.path}/receiving`} children={(prop) => <Receiving list={props.list}></Receiving>}></Route>
             </ListBody>
-        </div>
+        </Container>
     )
 }
 export default withRouter(OrderUI)

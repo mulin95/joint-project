@@ -2,28 +2,39 @@ import React, { Component } from 'react';
 
 import TitleBack from 'components/titleBack/TitleBack'
 import {NoteAddCom} from './StyleNote'
+import { Toast, WhiteSpace, WingBlank, Button } from 'antd-mobile'
 
 class NoteAdd extends Component {
     render() {
         return (
             <NoteAddCom>
-                <TitleBack back title="添加" rightEvent={this.handlerFinish}>
-                    <span>完成</span>
+                <TitleBack back title="添加">
+                    <WingBlank className="and-com">
+                        <WhiteSpace />
+                            <Button onClick={this.successToast}>完成</Button>
+                    </WingBlank>
                 </TitleBack>
-                <form action="">
+                <div className="content">
                     <p>
-                        标题：<input className="inp" type="text" placeholder=""/>
+                        <span>标题：</span>
+                        <div>
+                            <input type="text" placeholder=""/>
+                        </div>
                     </p>
                     <p>
-                        内容：<textarea name="" id="" cols="30" rows="10"></textarea>
+                        <span>内容：</span>
+                        <div>
+                            <textarea></textarea>
+                        </div>
                     </p>
-                </form>
+                </div>
             </NoteAddCom>
         )
     }
-    handlerFinish(props){
-        // console.log(props)
-        props.history.goBack();
+    successToast=()=> {
+        Toast.success('添加笔记成功', 0.6,()=>{
+            this.props.history.goBack();
+        });
     }
 }
 

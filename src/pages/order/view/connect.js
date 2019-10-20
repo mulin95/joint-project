@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
 
-import { sagaLoadData } from '../actionCreator'
+import { sagaLoadData, getDir } from '../actionCreator'
 
 const mapState = (state) => {
     return {
-        List: state.List
+        dir: state.dir
     }
 }
 
@@ -12,7 +12,10 @@ const mapDispatch = (dispatch) => {
     return {
         loadData() {
             dispatch(sagaLoadData())
-          }
+          },
+        getDir(data) {
+            dispatch(getDir(data))
+        }
     }
 }
 

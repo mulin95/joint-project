@@ -4,11 +4,17 @@ import { Route,Switch,Redirect } from 'react-router-dom';
 import 'styles/reset.css'
 import 'styles/animate.css'
 
-import {Order} from 'pages/order/index.js';
-import {Communicate} from 'pages/communicate/index.js';
-import {Profile}  from 'pages/profile/index.js';
-import {Grade} from 'pages/grade/index.js';
-import {Search} from 'pages/search/index.js';
+import {Order} from 'pages/order/';
+import {Communicate} from 'pages/communicate/';
+import {Profile}  from 'pages/profile/';
+import {Grade} from 'pages/grade/';
+import {Search} from 'pages/search/';
+import {Practice} from 'pages/practice/';
+import {QualityInformation} from 'pages/qualityInformation/';
+import {MiddleExercises} from 'pages/middleExercises/';
+import {Information} from 'pages/information/';
+import {Buy} from 'pages/buy/index.js';
+
 import Index from 'pages/index/Index';
 import Login from 'pages/login/index';
 import Page404 from 'components/Page404.jsx';
@@ -25,6 +31,11 @@ function App() {
         <Route path='/profile' component={Profile}></Route>
         <Route path='/grade' component={Grade}></Route>
         <Route path='/search' component={Search}></Route>
+        <Route path='/practice' component={Practice}></Route>
+        <Route path='/qualityInformation' component={QualityInformation}></Route>
+        <Route path='/middleExercises' component={MiddleExercises}></Route>
+        <Route path='/information' component={Information}></Route>
+        <Route path='/buy' component={Buy}></Route>
         <Redirect from='/' to='/index' exact></Redirect>
         <Route component={Page404}></Route>
       </Switch>
