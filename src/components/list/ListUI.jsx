@@ -6,7 +6,11 @@ const ListUI = (props) => {
     return (
         <ListContainer>
             <ul>
-                <li>
+                <li 
+                onTouchStart = {props.onTouchStart}
+                onTouchMove = {props.onTouchMove}
+                onTouchEnd = {props.onTouchEnd}
+                >
                     <img src={props.list.topicImg} alt=""/>
                     <h3>
                         {props.list.topicName}

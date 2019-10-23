@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { NavBar, Icon } from 'antd-mobile';
 import TitleBack from 'components/titleBack/TitleBack';
 import { TabBarContainer, ListBody,Container } from './StyledUI'
 
@@ -22,13 +21,13 @@ const ASUI = (props) => {
             <TabBarContainer>
                 <ul>
                     <li onClick = {() => props.handleClick('sold')}>全部</li>
-                    <li onClick = {() => props.handleClick('service')}>待付款</li>
+                    <li onClick = {() => props.handleClick('service')}>售后</li>
                 </ul>
             </TabBarContainer>
 
             <ListBody>
-            <Route path={`${props.path}/sold`} children={(prop) => <Sold list={props.list} dNum={props.dNum}></Sold>}></Route>
-            <Route path={`${props.path}/service`} children={(prop) => <Service list={props.list} dNum={props.dNum}></Service>}></Route>
+            <Route path={`${props.path}/sold`} children={(prop) => <Sold list={props.list}></Sold>}></Route>
+            <Route path={`${props.path}/service`} children={(prop) => <Service list={props.list}></Service>}></Route>
             <Redirect from={`${props.path}`} to={`${props.path}/sold`} exact></Redirect>
             </ListBody>
         </Container>

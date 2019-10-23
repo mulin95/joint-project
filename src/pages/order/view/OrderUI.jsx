@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { NavBar, Icon } from 'antd-mobile';
 import TitleBack from 'components/titleBack/TitleBack';
 import { TabBarContainer, ListBody,Container } from './StyledOrder'
 
