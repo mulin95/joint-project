@@ -1,31 +1,42 @@
 import React, { Component } from 'react';
 
-import TitleBack from 'components/titleBack/TitleBack'
+import TitleCom from '../titleCom/TitleCom'
 import {NoteShowCom} from'./StyleNote';
 
 class NoteShow extends Component {
     state = {
         id:'',
         title:'',
-        text:''
+        content:'',
+        date:''
     }
     render() {
         return (
             <NoteShowCom>
-                <TitleBack title={this.state.title} />
-                ID：  {this.state.id}<br/><br/>
-                标题：{this.state.title}<br/><br/>
-                内容：{this.state.text}<br/><br/>
+                <TitleCom 
+                    title='笔记详情'
+                />
+                <div className="content">
+                    <p>
+                        <span>{this.state.title}</span>
+                    </p>
+                    <p>
+                        <span>{this.state.content}</span>
+                    </p>
+                    <p>
+                        <span>{this.state.date}</span>
+                    </p>
+                </div>
             </NoteShowCom>
-        );
+        )
     }
     componentDidMount(){
-        const {query} = this.props.location;
-        // console.log(this,query);
+        let note = this.props.location.state.note
         this.setState({
-            id:query.id,
-            title:query.title,
-            text:query.text
+            id:note.id,
+            title:note.title,
+            content:note.content,
+            date:note.date
         })
     }
 }
