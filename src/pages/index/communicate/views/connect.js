@@ -8,21 +8,19 @@ import {
 
 function stateMap(state){
   return{
-    scroll:state.getIn(['communicate','scroll'])
+    scroll:state.getIn(['communicate','scroll']),
+    list:state.getIn(['communicate','list'])
   }
 }
 
 function dispatchMap(dispatch){
   return{
-    saveScroll(){
-      dispatch(save_scroll())
+    saveScroll(data){
+      dispatch(save_scroll(data))
     },
-    loadData(){
-      dispatch(load_data())
+    loadData(data){
+      dispatch(saga_load_data(data))
     },
-    sagaLoadData(){
-      dispatch(saga_load_data())
-    }
   }
 }
 

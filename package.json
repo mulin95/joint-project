@@ -5,8 +5,11 @@
   "dependencies": {
     "@types/react-transition-group": "^4.2.3",
     "antd-mobile": "^2.3.1",
+    "antd-mobile-demo-data": "^0.3.0",
+    "axios": "^0.19.0",
     "better-scroll": "^1.15.2",
     "immutable": "^4.0.0-rc.12",
+    "json-server": "^0.15.1",
     "react": "^16.10.2",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.1",
@@ -23,7 +26,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mock-profile-user": "json-server ./src/mock/profile-mock/user-name.json -p 9011 -w",
+    "mock-profile-note": "json-server ./src/mock/profile-mock/user-note.json -p 9012 -w"
   },
   "eslintConfig": {
     "extends": "react-app"

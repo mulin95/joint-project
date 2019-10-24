@@ -8,6 +8,9 @@ import service  from 'assets/profileImages/service.png';
 import arrow    from 'assets/profileImages/arrow.png';
 import user     from 'assets/profileImages/user.png';
 
+import connect from './connect'
+import axios from 'axios'
+
 import {
     Profile,
     Content,
@@ -52,7 +55,12 @@ const MsgList = [
     },
 ]
 
+@connect
 class ProfileContainer extends Component {
+    state={
+        userId:'',
+        userName:''
+    }
     render() {
         const {history} = this.props;
         return (
@@ -63,7 +71,7 @@ class ProfileContainer extends Component {
                     <dt>
                         <img src={user} alt=""/>
                     </dt>
-                    <dd>yn2019-10-7</dd>
+                    <dd onClick={()=>this.changeName()}>{this.state.userName}</dd>
                 </dl>
             </header>    
             <Content>
@@ -87,12 +95,27 @@ class ProfileContainer extends Component {
         </Profile>
         )
     }
+    async componentDidMount(){
+        let result = await axios.get('/user')
+        this.setState({
+            userId:result.data[0].id,
+            userName:result.data[0].username
+        })
+    }
     handlerClick(route){
         if(route === 'order'){
             this.props.history.push('/'+route);
         }else{
             this.props.history.push('/profile/'+route);
         }
+    }
+    changeName(){
+        let {userId,userName} = this.state
+        let user = {
+            userId,
+            userName
+        }
+        this.props.history.push('/profile/user/add',{user:user})
     }
 }
 

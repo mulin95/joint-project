@@ -1,25 +1,22 @@
 import {Map} from 'immutable';
 
 import {
-  save_scroll,
-  load_data,
-  saga_load_data 
+  SAVE_SCROLL,
+  LOAD_DATA,
 } from './actionTypes';
 
 
 const defaultStatus=Map({
-  scroll:null,
+  scroll:0,
   list:[]
 })
 
 export default (state=defaultStatus,action) => {
   switch(action.type){
-    case save_scroll:
+    case SAVE_SCROLL:
       return state.set('scroll',action.data)
-    // case load_data:
-    //   return 
-    // case saga_load_data:
-    //   return 
+    case LOAD_DATA:
+      return state.set('list',action.data)
     default: 
       return state
   }
