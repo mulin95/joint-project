@@ -4,7 +4,7 @@ import {CommunicateContainer} from './StyledCommunicate'
 import sou from 'cmcimg/sou.png'
 import Cell from 'components/communicate/Cell'
 
-function UI(props) {
+const UI= React.forwardRef((props,ref)=>{
   return (
     <CommunicateContainer>
         <div>
@@ -16,7 +16,7 @@ function UI(props) {
             <img src={sou} alt=""/>
           </div>
         </div>
-        <div>
+        <div ref={ref}>
           <ul>
             {
               props.list.map((item) => (
@@ -33,6 +33,6 @@ function UI(props) {
         </div>
       </CommunicateContainer>
   )
-}
+})
 
 export default UI
