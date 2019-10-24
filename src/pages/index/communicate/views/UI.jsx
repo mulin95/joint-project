@@ -22,9 +22,9 @@ function UI(props) {
               props.list.map((item) => (
                 <Cell 
                   {...item}
-                  key={item.requestionId} 
+                  key={item.requestionid} 
                   onJump={() => {
-                    props.onJump(item.requestionId)
+                    props.onJump(item.requestionid)
                   }}
                 />
               ))

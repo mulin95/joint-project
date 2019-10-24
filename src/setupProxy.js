@@ -12,4 +12,12 @@ module.exports = function(app) {
     changeOrigin: true,
   }))
 
+  app.use('/huileme', proxy({
+    target: 'http://101.200.54.176:8080',
+    changeOrigin: true,
+  }))
+  app.use('/huilme', proxy({
+    target: 'http://101.200.54.176:8080',
+    changeOrigin: true,
+  }))
 }

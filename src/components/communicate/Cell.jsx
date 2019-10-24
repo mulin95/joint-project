@@ -22,21 +22,21 @@ function Cell(props) {
   return (
     <CellContainer >
       <div className='user' onClick={props.onJump}>
-        <img src={props.user.headPortrait} alt="" />
+        <img src={'http://thepatternlibrary.com/img/ar.png'||props.user.userimg} alt="" />
         <div>
-          <p>{props.user.userNickName}</p>
-          <p>{props.requestionTime||props.answerTime}</p>
+          <p>{props.user.username}</p>
+          <p>{props.requestiontime||props.answerTime}</p>
         </div>
       </div>
       <div className='content' onClick={props.onJump}>
         <p>
           <img src={wen} alt="" />
           <span>
-          {props.requestionTitle||props.answerTitle}
+          {props.requestiontitle||props.answerTitle}
           </span>
         </p>
         <div>
-          <img src={props.answerQuestions||props.theQuestionAnswer} alt="" />
+          <img src={'http://thepatternlibrary.com/img/q.png'||props.answerquestions||props.theQuestionAnswer} alt="" />
         </div>
       </div>
       <ul className='foot'>
@@ -44,19 +44,19 @@ function Cell(props) {
           <p>
             <img src={false?kanA:kan} alt="" />
           </p>
-          <span>{props.reqPageview||props.ansPageview}</span>
+          <span>{props.reqPageview||props.ansPageview||100}</span>
         </li>
         <li onClick={props.onJump}>
           <p>
             <img src={false?pingA:ping} alt="" />
           </p>
-          <span>{props.reqCommentnum}</span>
+          <span>{props.reqCommentnum||200}</span>
         </li>
         <li onClick={handleZan}>
           <p>
             <img src={stateZan?zanA:zan} alt="" />
           </p>
-          <span>{props.reqLikenum-0+(stateZan?1:0)}</span>
+          <span>{(props.reqLikenum||300)-0+(stateZan?1:0)}</span>
         </li>
       </ul>
     </CellContainer>

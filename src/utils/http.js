@@ -2,7 +2,9 @@
 export default {
   get: (url,options) => {
     return fetch(url,options||{})
-      .then(response => response.json())
+      .then(response => {
+        return response.json()
+      })
       .then(result => {
         return result
       })

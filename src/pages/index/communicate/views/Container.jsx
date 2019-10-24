@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import UI from './UI'
+import http from 'utils/http'
 
 export default class Communicate extends Component {
   state={
@@ -9,8 +10,12 @@ export default class Communicate extends Component {
   handleJump(path){
     this.props.history.push('/communicate/'+path)
   }
-  componentDidMount(){
-    
+  async componentDidMount(){
+    let res= await http.get('/huilme/a/m/RequestionController/interChange')
+    console.log(res)
+    this.setState({
+      list:res.data.list
+    })
     // this.setState({
     //   list:[
     //     {
