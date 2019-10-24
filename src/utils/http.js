@@ -11,6 +11,12 @@ export default {
   },
   post: (url,options) => {
     options=options||{}
+    if(typeof options.body ==='object'){
+      options.body=JSON.stringify(options.body)
+    }
+    if(typeof options.data ==='object'){
+      options.body=JSON.stringify(options.data)
+    }
     return fetch(url,{
       method:'POST',
       ...options

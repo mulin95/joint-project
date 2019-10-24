@@ -9,6 +9,7 @@ import pingA from 'cmcimg/pingA.png'
 import zan from 'cmcimg/zan.png'
 import zanA from 'cmcimg/zanA.png'
 import wen from 'cmcimg/wen.png'
+import da from 'cmcimg/da.png'
 
 
 function Cell(props) {
@@ -25,18 +26,18 @@ function Cell(props) {
         <img src={'http://thepatternlibrary.com/img/ar.png'||props.user.userimg} alt="" />
         <div>
           <p>{props.user.username}</p>
-          <p>{props.requestiontime||props.answerTime}</p>
+          <p>{props.requestiontime||props.answertime}</p>
         </div>
       </div>
       <div className='content' onClick={props.onJump}>
         <p>
-          <img src={wen} alt="" />
+          <img src={props.ans?da:wen} alt="" />
           <span>
-          {props.requestiontitle||props.answerTitle}
+          {props.requestiontitle||props.answertitle}
           </span>
         </p>
         <div>
-          <img src={'http://thepatternlibrary.com/img/q.png'||props.answerquestions||props.theQuestionAnswer} alt="" />
+          <img src={'http://thepatternlibrary.com/img/q.png'||props.answerquestions||props.thequestionanswer} alt="" />
         </div>
       </div>
       <ul className='foot'>
