@@ -8,7 +8,7 @@ const Profile = styled.div`
     width:100%;
     height:100%;
     header{
-        height : 2.34rem;
+        height : 2rem;
         width : 100%;
         background:url(${bgimg}) no-repeat 0 0;
         background-size:cover;
@@ -20,18 +20,18 @@ const Profile = styled.div`
         span{
             position: absolute;
             right:.2rem;
-            top:.3rem;
+            top:.2rem;
             width :.17rem;
             height:.17rem;
             background:url(${setUp});
             background-size:100%;
         }
         dl{
-            margin-top:.3rem;
+            margin-top:.6rem;
             width :1.05rem;
             height:1.35rem;
             dt{
-                margin:0 .08rem .27rem .08rem;
+                margin:0 .08rem .2rem .08rem;
                 width :.9rem;
                 height:.9rem;
                 img{

@@ -13,10 +13,12 @@ import Service  from './components/Service';
 import SetUp    from './components/setUp/SetUp';
 import User     from './components/user/User';
 
+import connect from './connect'
 
+@connect
 class Profile extends Component {
     render() {
-        let path = this.props.match.path;
+        let path = this.props.match.path
         return (
             <Switch>
                 <Route path={path + '/note'}    component={Note}></Route>

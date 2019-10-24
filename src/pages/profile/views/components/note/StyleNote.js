@@ -43,7 +43,7 @@ const NoteHeader = border({
 const NoteAddCom = styled.div`
     height:100%;
     background:#fff;
-    .right{
+    .textRight{
         .and-com{
             margin-left:0;
             margin-right:0;
@@ -65,8 +65,8 @@ const NoteAddCom = styled.div`
         }
     }
     .content{
-        padding:.3rem 1rem 0 .2rem;
-        p:nth-child(1){
+        padding:.3rem .8rem 0 .2rem;
+        >div:nth-child(1){
             height:.38rem;
             display:flex;
             align-items:center;
@@ -74,6 +74,8 @@ const NoteAddCom = styled.div`
             span{
                 font-size:.16rem;
                 color:#333;
+                display:inline-block;
+                width:.5rem;
             }
             div{
                 height:.3rem;
@@ -89,12 +91,14 @@ const NoteAddCom = styled.div`
                 }
             }
         }
-        p:nth-child(2){
+        >div:nth-child(2){
             height:1.6rem;
             display:flex;
             span{
                 font-size:.16rem;
                 color:#333;
+                display:inline-block;
+                width:.5rem;
             }
             div{
                 flex:1;
@@ -106,15 +110,60 @@ const NoteAddCom = styled.div`
                     width:100%;
                     height:100%;
                     resize:none;
+                    border:1px solid #999;
+                    border-radius:.05rem;
                 }
             }
+        }
+    }
+    >p{
+        padding-top:.1rem;
+        padding-left:.15rem;
+        img{
+            width:.16rem;
+            height:.16rem;
+            margin-right:.1rem;
+            margin-top:-.02rem;
+        }
+        span{
+            color:#979797;
+            font-size:.14rem;
+        }
+        span:last-child{
+            padding-left:.25rem;
         }
     }
 `
 
 const NoteShowCom = styled.div`
-    height:1000%;
+    height:100%;
     background:#fff;
+    overflow:auto;
+    .content{
+        padding:.3rem .15rem;
+        p{
+            text-align:justify; 
+            margin-bottom:.2rem;
+            span{
+                font-size:.16rem;
+                font-weight:bold;
+            }
+        }
+        p:nth-child(2){
+            span{
+                font-size:.14rem;
+                font-weight:normal;
+            }
+        }
+        p:nth-child(3){
+            text-align:right;
+            span{
+                font-size:.14rem;
+                font-weight:normal;
+                color:#999;
+            }
+        }
+    }
 `
 
 export {

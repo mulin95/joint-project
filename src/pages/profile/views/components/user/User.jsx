@@ -19,7 +19,7 @@ class User extends Component {
                 <Route path={path + '/list'} component={UserList}></Route>
                 <Route path={path + '/about'} component={UserAbout}></Route>
                 <Route path={path + '/add'} component={UserAddName}></Route>
-                <Route path={path + '/tel'} component={UserTel}></Route>
+                <Route path={path + '/tel/:tel'} component={UserTel}></Route>
                 <Redirect from={path} to={path + '/list'}></Redirect>
             </Switch>
         );
