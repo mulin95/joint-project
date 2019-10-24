@@ -1,4 +1,4 @@
-import React,{useState,useEffect,useCallback} from 'react';
+import React,{useState,useEffect} from 'react';
 
 import TitleBack from 'components/titleBack/TitleBack'
 import Cell from 'components/communicate/Cell'
@@ -9,32 +9,44 @@ import {Detail} from '../Styled'
 import InputBar from '../componet/InputBar'
 import http from 'utils/http'
 
-const loadData=async(id,setAnsList) => {
+let id=null
+
+const loadData=async(setAnsList) => {
   let res = await http.get('/huilme/a/m/AnswerController/detailsProblem?requsetionid='+id)
   setAnsList(res.data.list)
+}
+const filter=(setQuestion,list) => {
+  setQuestion(list.filter((item) => {
+    if(item.requestionid==id){
+      return true
+    }else{
+      return false
+    }
+  })[0])
 }
 
 function DetailContainer(props) {
   const [ansList, setAnsList] = useState([])
+  const [question, setQuestion] = useState()
+
   useEffect(() => {
-    let id=props.match.params.id
-    loadData(id,setAnsList)
-     
+    id=props.match.params.id
+    loadData(setAnsList)
+    props.list.length === 0 && props.loadData()
   },[])
+
+  useEffect(() => {
+    filter(setQuestion,props.list)
+  },[props.list])
+
   return (
     <Detail>
-      <TitleBack title='详情'/>
+      <TitleBack title='详情' leftEvent={(props) => {
+        props.history.push('/index/communicate')
+      }}/>
       <div>
         <ul>
-          <Cell 
-            {
-              ...props.list.filter((item) => {
-                if(item.requestionid==props.match.params.id){
-                  return true
-                }
-              })[0]
-            }
-            ></Cell>
+          {question&&<Cell {...question}></Cell>}
           {
             ansList.map((item) => (
               <Cell 
