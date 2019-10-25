@@ -6,7 +6,10 @@ import Input from '../componet/Input'
 import TitleBack from 'components/titleBack/TitleBack'
 
 export default class Ask extends Component {
-
+  constructor(){
+    super()
+    console.log(window.wx)
+  }
   render() {
     return (
       <AskContainer>
