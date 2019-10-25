@@ -12,7 +12,7 @@ import http from 'utils/http'
 let id=null
 
 const loadData=async(setAnsList) => {
-  let res = await http.get('/huilme/a/m/AnswerController/detailsProblem?requsetionid='+id)
+  let res = await http.get('/huileme/a/m/AnswerController/detailsProblem?requsetionid='+id)
   setAnsList(res.data.list)
 }
 const filter=(setQuestion,list) => {
