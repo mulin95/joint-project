@@ -46,14 +46,27 @@ const AskContainer=styled.div`
     padding:0 .15rem;
     >div:nth-child(2){
       margin-top:.18rem;
-      width:1.09rem;
-      height:1.09rem;
+      width:3rem;
+      height:3rem;
       border:1px solid rgba(112,112,112,1);
       color:#707070;
       font-size:.11rem;
       display:flex;
       justify-content:center;
       align-items:center;
+      position: relative;
+      input{
+        width:100%;
+        height:100%;
+        position:absolute;
+        opacity: 0
+      }
+      img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        position:absolute;
+      }
     }
   }
 `
