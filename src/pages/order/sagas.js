@@ -7,7 +7,7 @@ import http from 'utils/http'
 
 function loadDataSaga() {
   return takeEvery(SAGA_LOAD_DATA, function* () {
-    let result = yield http.get({url: '/data?_start=0&_limit=10'})
+    let result = yield http.get('/huileme/a/u/wode/OrdertopicController/myOrder')
     yield put(loadData(result))
   })
 }
