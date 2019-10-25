@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 import TitleBack from 'components/titleBack/TitleBack'
 import noteAdd from 'assets/profileImages/noteAdd.png'
-import arrowNote from 'assets/profileImages/arrow-note.png';
-import axios from 'axios'
+import arrowNote from 'assets/profileImages/arrow-note.png'
+import http from 'utils/http'
+import MsgCom from '../titleCom/MsgCom'
 import {
     NoteCom,
     NoteHeader
@@ -23,45 +24,54 @@ class NoteList extends Component {
                 </NoteHeader>
                 <ul>
                     {
-                        this.state.noteList.map((item)=>{
-                            return (
-                                <li 
-                                    key={item.id} 
-                                    onTouchStart={this.touchStart}
-                                    onClick={()=>this.clickNote(item.id,item.title,item.content,item.date)
-                                }>
-                                    <p>{item.title}</p>
-                                    <span>{item.date}</span>
-                                    <img src={arrowNote} alt=""/>
-                                </li>
-                            )
-                        })
+                        this.state.noteList.length === 0 ?
+                            <MsgCom title="点击右上角添加你喜欢的笔记吧😊"/>
+                        :
+                            this.state.noteList.map((item)=>{
+
+                                return (
+                                    <li 
+                                        key={item.usernoteid} 
+                                        onTouchStart={this.touchStart}
+                                        onClick={()=>this.clickNote(item.usernoteid,item.notetitle,item.notecontent)
+                                    }>
+                                        <p>{item.notetitle}</p>
+                                        <span>{new Date().toLocaleDateString()}</span>
+                                        <img src={arrowNote} alt=""/>
+                                    </li>
+                                )
+                            })
                     }
                 </ul>
             </NoteCom>
         )
     }
     async componentDidMount(){
-        let result = await axios.get('/note')
-        this.setState({
-            noteList : result.data
+        let url = '/huileme/a/u/NoteController/myNote';
+        let result = await http.get(url,{
+            headers:{
+                'x-access-token': localStorage.getItem('token')
+            }
         })
+        console.log(result)
+        if(result.message === "数据没有查询到"){
+
+        }else{
+            this.setState({
+                noteList : result.data
+            })
+        }
     }
     touchStart(){
-        // setTimeout(()=>{
-        //     alert(123)
-        // },1000)
     }
     clickNoteAdd(props){
         props.history.push('/profile/note/noteAdd')
     }
-    clickNote(id,title,content,date){
-        console.log('click')
+    clickNote(id,title,content){
         let note = {
             id,
             title,
-            content,
-            date
+            content
         }
         this.props.history.push('/profile/note/noteShow',{note})
     }

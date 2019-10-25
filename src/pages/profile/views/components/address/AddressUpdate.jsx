@@ -11,7 +11,7 @@ import {
     Button 
 } from 'antd-mobile';
 
-class AddressAdd extends Component {
+class AddressUpdate extends Component {
     state = {
         userId:'',
         userName:'',
@@ -21,7 +21,7 @@ class AddressAdd extends Component {
     render() {
         return (
             <AddressAddCom>
-                <TitleBack className="title" title="添加地址" >
+                <TitleBack className="title" title="编辑地址" >
                     <WingBlank className="and-com">
                         <WhiteSpace />
                             <Button onClick={this.successToast}>保存</Button>
@@ -66,16 +66,28 @@ class AddressAdd extends Component {
             </AddressAddCom>
         );
     }
+    componentDidMount(){
+        let address= this.props.location.state.address
+        // console.log(address)
+        this.setState({
+            userId:address.id,
+            userName:address.name,
+            userTel:address.tel,
+            userAddress:address.add
+        })
+    }
     successToast=async()=> {
+
         let url = '/huileme/a/u/ShippingaddressController/addshippingAddress'
         let data = {
+            shippingid:this.state.userId,
             shippingpeople:this.state.userName,
             shippingphone:this.state.userTel,
             address:this.state.userAddress
         }
         
-        // console.log(this.state)
-        // console.log(data)
+        console.log(this.state)
+        console.log(data)
         await http.post(url,{
         　　headers: {
         　　　　'Content-Type': 'application/x-www-form-urlencoded',
@@ -84,7 +96,7 @@ class AddressAdd extends Component {
             body:qs.stringify(data)
         })
 
-        Toast.success('添加收货地址成功', 0.6,()=>{
+        Toast.success('修改收货地址成功', 0.6,()=>{
             this.props.history.goBack();
         });
     }
@@ -105,4 +117,4 @@ class AddressAdd extends Component {
     }
 }
 
-export default AddressAdd;
+export default AddressUpdate;

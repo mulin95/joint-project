@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 
 import {UserListCom} from './StyledUser'
-import backImg from 'images/back.png'
-import user_5   from 'assets/profileImages/user-5.png'
+import backImg from 'images/back.png' 
 import arrow from 'assets/profileImages/arrow-note.png'
 import ButtonCom from '../titleCom/ButtonCom'
-import axios from 'axios'
+import http from 'utils/http'
+import user_5   from 'assets/profileImages/user-5.png'
 
 class UserList extends Component {
     state={
         userId:'',
+        userImg:'',
         poPup:false,
         userName:'',
         account:'',
         userTel:'',
+        userEmail:''
     }
     render() {
         return (
@@ -45,7 +47,7 @@ class UserList extends Component {
                         <li>
                             <span>账户名称</span>
                             <div className="user">
-                                <span>{this.state.account}</span>
+                                <span>学员{this.state.account}</span>
                             </div>
                         </li>
                         <li onClick={()=>this.changeTel()}>
@@ -57,7 +59,7 @@ class UserList extends Component {
                         </li>
                         <li>
                             <span>邮箱登录找回</span>
-                            <div></div>
+                            <div>{this.state.userEmail}</div>
                             <img className="arrow" src={arrow} alt=""/>
                         </li>
                     </ul>
@@ -96,12 +98,20 @@ class UserList extends Component {
         );
     }
     async componentDidMount(){
-        let result = await axios.get('/user')
+        let url = '/huileme/a/u/userManagementController/accountu';
+        let result = await http.get(url,{
+            headers: {
+        　　　　'x-access-token': localStorage.getItem('token')
+        　　},
+        })
+        console.log(result)
         this.setState({
-            userId:result.data[0].id,
-            userName:result.data[0].username,
-            account:result.data[0].account,
-            userTel:result.data[0].userTel,
+            userId:result.data.userid,
+            userName:result.data.userNickname,
+            account:result.data.userid,
+            userTel:result.data.userPhone,
+            userEmail:result.data.userpassword,
+            userImg:result.data.userimg
         })
     }
     photo(pic,img) {
@@ -112,7 +122,7 @@ class UserList extends Component {
             reader.readAsDataURL(file)
             reader.onload = function (e) {
                 picUrl.setAttribute("src", e.target.result)
-                console.log(e.target.result)
+                // console.log(e.target.result)
              };
     }
     changePic(){
@@ -122,10 +132,8 @@ class UserList extends Component {
         console.log('退出登录')
     }
     changeName(){
-        let {userId,userName} = this.state
         let user = {
-            userId,
-            userName
+            userName:this.state.userName
         }
         this.props.history.push('/profile/user/add',{user:user})
     }

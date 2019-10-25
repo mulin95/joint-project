@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const AddressListCom = styled.div`
     background:rgba(216, 216, 216, 0.3);
     ul{
-        padding-top:.2rem;
+        margin-top:.2rem;
         li{
             display:flex;
             background:#fff;
@@ -18,6 +18,7 @@ const AddressListCom = styled.div`
                 border-radius:50%;
             }
             .info{
+                padding-left:.2rem;
                 flex:1;
                 .userName{
                     color:#666666;
@@ -30,6 +31,7 @@ const AddressListCom = styled.div`
                     font-size:.12rem;
                 }
                 p{
+                    margin-top:.06rem;
                     color:#979797;
                     font-size:.12rem;
                     word-break: break-all;

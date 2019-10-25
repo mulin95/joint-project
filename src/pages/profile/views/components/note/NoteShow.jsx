@@ -7,8 +7,7 @@ class NoteShow extends Component {
     state = {
         id:'',
         title:'',
-        content:'',
-        date:''
+        content:''
     }
     render() {
         return (
@@ -24,7 +23,7 @@ class NoteShow extends Component {
                         <span>{this.state.content}</span>
                     </p>
                     <p>
-                        <span>{this.state.date}</span>
+                        <span>{new Date().toLocaleDateString()}</span>
                     </p>
                 </div>
             </NoteShowCom>
@@ -35,8 +34,7 @@ class NoteShow extends Component {
         this.setState({
             id:note.id,
             title:note.title,
-            content:note.content,
-            date:note.date
+            content:note.content
         })
     }
 }
