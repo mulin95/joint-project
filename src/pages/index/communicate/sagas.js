@@ -8,7 +8,7 @@ import http from 'utils/http'
 
 function saga_load_data() {
   return takeEvery(SAGA_LOAD_DATA, function* () {
-    let result = yield http.get('/huilme/a/m/RequestionController/interChange')
+    let result = yield http.get('/huileme/a/m/RequestionController/interChange')
     yield put(load_data(result.data.list))
   })
 }

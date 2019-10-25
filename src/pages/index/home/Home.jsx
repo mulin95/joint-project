@@ -11,8 +11,6 @@ import{
 //组件
 import Content from './contents/Contents'
 
-
-
 //样式
 import{
   CateContainer,
@@ -23,9 +21,20 @@ import{
 //图片
 import fdj from "../../../assets/images/fangdajing.png"
 
+// import http from 'utils/http'
+
 export default class Home extends Component {
+  state={
+    list:[]
+  }
+
+  // handleClick(id){
+  //   this.props.history.
+  // }
+
   render() {
     let {match,history}=this.props
+    
     return (
       <CateContainer>
        

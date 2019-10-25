@@ -4,7 +4,8 @@ import { sagaLoadData } from '../actionCreator'
 
 const mapState = (state) => {
     return {
-        List: state.List
+        dir: state.getIn(["order",'dir']),        
+        listt: state.getIn(["order","list"])
     }
 }
 
@@ -12,7 +13,7 @@ const mapDispatch = (dispatch) => {
     return {
         loadData() {
             dispatch(sagaLoadData())
-          }
+        }
     }
 }
 

@@ -8,14 +8,17 @@ import ListUI from 'components/list/ListUI'
 
 import { Modal, Button, WhiteSpace, WingBlank, Toast } from 'antd-mobile';
 
+import connect from '../view/connect'
+
 const alert = Modal.alert;
 
+@connect
 class Shipped extends PureComponent {
     render() {
         // console.log(this.props)
         return (
                 <ListUI
-                    list={this.props.list}
+                    list={this.props.listt}
                     onTouchStart={this.handleStart}
                     onTouchMove={this.handleMove}
                     onTouchEnd={this.handleEnd}
@@ -25,6 +28,10 @@ class Shipped extends PureComponent {
 
 
         )
+    }
+
+    async componentDidMount() {
+        this.props.loadData()
     }
 
     state = {
