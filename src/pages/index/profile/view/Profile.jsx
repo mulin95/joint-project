@@ -55,6 +55,31 @@ const MsgList = [
 ]
 
 class ProfileContainer extends Component {
+    constructor(){
+        super()
+        
+        let userToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ4ZGNsYXNzIiwiaWQiOiI1OGVjNTEzNTAxMzI0NWI1OWM5ZDEyNWY0OGM0ZWM1MCIsInBob25lIjoiMTUyMzU2ODIyODgiLCJpYXQiOjE1NzE5OTAzMTgsImV4cCI6MTU3MjU5NTExOH0.CihVzf6JJlOnN2VlQT8yszvI97lR1yv-IjwDIX2-mYo";
+        localStorage.setItem('token',userToken)
+        
+        this.isLogin()
+    }
+    async isLogin(){
+        let url = '/huileme/a/u/wode/UserController/FindByid';
+        // let url = '/huileme/a/u/userManagementController/accountu';
+        let result = await http.get(url,{
+            headers: {
+        　　　　'x-access-token': localStorage.getItem('token')||''
+        　　},
+        })
+        console.log(result)
+        if(!result.code){
+            this.props.history.push('/login');
+        }else{
+        this.setState({
+            userName:result.data.username
+        })
+        }
+    }
     state={
         userId:'',
         userName:''
@@ -92,20 +117,6 @@ class ProfileContainer extends Component {
             </Content>
         </Profile>
         )
-    }
-    async componentDidMount(){
-        let userToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ4ZGNsYXNzIiwiaWQiOiI1OGVjNTEzNTAxMzI0NWI1OWM5ZDEyNWY0OGM0ZWM1MCIsInBob25lIjoiMTUyMzU2ODIyODgiLCJpYXQiOjE1NzE5OTAzMTgsImV4cCI6MTU3MjU5NTExOH0.CihVzf6JJlOnN2VlQT8yszvI97lR1yv-IjwDIX2-mYo";
-        localStorage.setItem('token',userToken)
-        // let url = '/huileme/a/u/wode/UserController/FindByid';
-        let url = '/huileme/a/u/userManagementController/accountu';
-        let result = await http.get(url,{
-            headers: {
-        　　　　'x-access-token': localStorage.getItem('token',userToken)
-        　　},
-        })
-        this.setState({
-            userName:result.data.userNickname
-        })
     }
     handlerClick(route){
         if(route === 'order'){

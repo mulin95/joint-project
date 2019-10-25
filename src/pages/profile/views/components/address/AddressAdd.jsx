@@ -83,7 +83,6 @@ class AddressAdd extends Component {
         　　},
             body:qs.stringify(data)
         })
-
         Toast.success('添加收货地址成功', 0.6,()=>{
             this.props.history.goBack();
         });
