@@ -36,7 +36,7 @@ class Item extends Component {
     }
     skipVerifyCode= () => {
         console.log(1)
-        this.props.history.push("/login/index")
+        this.props.history.push("/login")
     }
 }
 

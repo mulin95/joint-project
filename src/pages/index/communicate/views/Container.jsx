@@ -2,6 +2,7 @@ import React, { Component, createRef } from 'react'
 
 import connect from './connect'
 import UI from './UI'
+import http from "utils/http";
 
 import BS from 'better-scroll'
 
