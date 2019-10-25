@@ -13,7 +13,6 @@ class ASContainer extends PureComponent {
 
      static getDerivedStateFromProps(props, state) {
         let pathName = props.location.pathname
-        console.log(pathName)
         switch (pathName) {
             case '/aftersale/sold':
                 return {

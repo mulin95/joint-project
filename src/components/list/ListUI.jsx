@@ -7,7 +7,7 @@ const ListUI = (props) => {
         <ListContainer>
             <ul>
                 {
-                    props.list ? props.list.map((li,index) => <li 
+                    props.list.length > 1 ? props.list.map((li,index) => <li 
                         key={"d" + index}
                         onTouchStart = {props.onTouchStart}
                         onTouchMove = {props.onTouchMove}
