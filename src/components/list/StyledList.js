@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import largeimg from 'loginImages/getCheckIn.png'
 
 const ListContainer = styled.div`
     position: absolute;
@@ -12,6 +13,16 @@ const ListContainer = styled.div`
         width: 100%;
         position: relative;
         overflow: scroll;
+        text-align: center
+        img {
+            margin: .61rem .87rem .20rem;
+            width:2.01rem;
+            height:2.07rem;
+        }
+        >p {
+            font-size: .14rem;
+            color: #666
+        }
         li {
             margin: 0 .15rem;
             padding: .10rem 0 .17rem;
@@ -71,4 +82,20 @@ const ListContainer = styled.div`
     }
 `
 
-export default ListContainer
+const Buttons = styled.button`
+    border:0px;
+    width:83%;
+    height:0.4rem;
+    background:url('${largeimg}') no-repeat center center;
+    border-radius:0.20rem;
+    margin-top:0.3rem;
+    p{
+        color:#fff;
+        font-size:0.16rem;
+        text-align:center;
+        line-height:0.4rem;
+        
+    }
+`
+
+export {ListContainer, Buttons}

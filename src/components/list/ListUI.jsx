@@ -1,6 +1,8 @@
 import React from 'react'
+import empty from 'images/empty.png'
 
-import ListContainer from './StyledList'
+import {ListContainer, Buttons} from './StyledList'
+
 
 const ListUI = (props) => {
     return (
@@ -37,7 +39,13 @@ const ListUI = (props) => {
                            {li.topicNumber ? <div className="total">
                                 X {li.topicNumber}
                             </div> : ""}
-                        </li>) : ""
+                        </li>) :<> 
+                        <img src={empty} alt=""/>
+                        <p>您好，这里还没有内容</p>
+                        <Buttons>
+                            <p>再去逛逛</p>
+                        </Buttons>
+                        </>
                 }
                 
             </ul>
