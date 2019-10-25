@@ -28,7 +28,6 @@ class Communicate extends Component {
     this.bs.on('scroll',({x,y}) => {
       y=y>0?0:y
       y=-this.maxHeight>y?-this.maxHeight:y
-      console.log(y)
       this.props.saveScroll(y)
     })
     // console.log(this.props,this.listBox.current.firstChild.offsetHeight)
