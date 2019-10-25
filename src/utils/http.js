@@ -3,10 +3,15 @@ export default {
   get: (url,options) => {
     return fetch(url,options||{})
       .then(response => {
-        return response.json()
+        return response.text()
       })
       .then(result => {
-        return result
+        if(result===''){
+          return false
+        }else{
+          return JSON.parse(result)
+        }
+        
       })
   },
   post: (url,options) => {
@@ -25,5 +30,15 @@ export default {
       .then(result => {
         return result
       })
+  },
+  delete : (url,options) => {
+    return fetch(url,{
+      method:'DELETE',
+      ...options
+    })
+    .then(response => response.json())
+    .then(result => {
+      return result
+    })
   }
 }
