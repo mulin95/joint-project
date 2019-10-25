@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import TitleCom from '../titleCom/TitleCom'
 import {NoteAddCom} from './StyleNote'
-import axios from 'axios'
+import http from 'utils/http'
+import qs from 'qs'
 import { 
     Toast, 
     WhiteSpace, 
@@ -62,20 +63,21 @@ class NoteAdd extends Component {
     }
     componentDidMount(){
         this.autoFocusInst.focus();
-        let id = '02'
-        localStorage.getItem('id')  || localStorage.setItem('id',id)
     }
-    successToast=()=> {
-        let id = localStorage.getItem('id')
+    successToast=async()=> {
         let {title,content} = this.state
         if(title.length>=2 && content.length>=3){
-            id++
-            localStorage.setItem('id','0'+id)
-            axios.post('/note',{
-                id:'0'+id,
-                title,
-                date:`${new Date().getMonth()+1}.${new Date().getDate()}`,
-                content
+            let url = '/huileme/a/u/NoteController/add'
+            let data = {
+                notetitle:title,
+                notecontent:content
+            }
+            await http.post(url,{
+            　　headers: {
+            　　　　'Content-Type': 'application/x-www-form-urlencoded',
+                    'x-access-token': localStorage.getItem('token')
+            　　},
+                body:qs.stringify(data)
             })
             Toast.success('添加笔记成功', 0.8,()=>{
                 this.props.history.goBack();

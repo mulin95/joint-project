@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 import TitleCom from '../titleCom/TitleCom'
 import {UserNameCom} from './StyledUser'
-import axios from 'axios'
 import warning from 'assets/profileImages/warning.png'
+import http from 'utils/http'
+import qs from 'qs'
 import { 
     Toast, 
     WhiteSpace, 
@@ -24,7 +25,6 @@ class UserAddName extends Component {
                         <input type="text" 
                             placeholder={this.props.location.state.user.userName} 
                             onChange={(e)=>this.handleChange(e)} 
-                            ref="name"
                             value={this.state.value}
                         />
                         <WingBlank className="and-com">
@@ -46,13 +46,29 @@ class UserAddName extends Component {
         })
     }
     successToast = async()=> {
-        let id = this.props.location.state.user.userId;
-        let username = this.refs.name.value;
+        let username = this.state.value;
         if(username.length < 2 || username.length > 8){
             Toast.offline('您输入的昵称字数不对', 0.8);
         }else{
-            await axios.patch('/user/'+id,{
-                username
+            let url = '/huileme/a/u/userManagementController/userNickName'
+
+            // let formData = new FormData();
+            // formData.append("userNickName",this.state.value)
+            // formData.append("userToken",userToken)
+            // await fetch(url,{
+            //         method:'POST',
+            //         body:formData
+            //     })
+
+            let data = {
+                userNickName:this.state.value
+            }
+            await http.post(url,{
+            　　headers: {
+            　　　　'Content-Type': 'application/x-www-form-urlencoded',
+                    'x-access-token': localStorage.getItem('token')
+            　　},
+                body:qs.stringify(data)
             })
             Toast.success('更换昵称成功', 0.8,()=>{
                 this.props.history.goBack();
