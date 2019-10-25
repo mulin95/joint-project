@@ -7,6 +7,8 @@ import TitleBack from 'components/titleBack/TitleBack'
 import arrow from '../../../assets/images/arrow.png'
 import book from 'images/book.png'
 
+import http from 'utils/http'
+
 //样式
 import {
     BuyBar,
@@ -14,6 +16,18 @@ import {
 } from './StyledBuy'
 
 export default class Buy extends PureComponent{
+    // state={
+    //     data:{}
+    // }
+
+    // async componentDidMount(){
+    //     let res= await http.get('/huileme/a/m/TopicDetailController/topdetail?topicId='+this.props.match.params.id)
+    //     console.log(res)
+    //     this.setState({
+    //         data:res.data
+    //     })
+    // }
+
     render(){
         return(
         <Div>
@@ -56,7 +70,7 @@ export default class Buy extends PureComponent{
                         </div>
                         <div className="right">
                             <div>
-                                <button>-</button><i>1111</i><button>+</button>
+                                <button>-</button><i>1</i><button>+</button>
                             </div>
                             <div className="song">平台送</div>
                             <div className="song">免邮</div>

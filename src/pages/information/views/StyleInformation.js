@@ -36,7 +36,7 @@ const Div=styled.div`
         }
         .bg1{
             width:100%;
-            height:16.3%;
+            height:25%;
         }
         .fit{
             padding:.2rem .15rem 0;
