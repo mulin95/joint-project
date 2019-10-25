@@ -15,9 +15,9 @@ let Animated = (Comp) => {
             timeout={1000}
             classNames={{
                 enter: 'animated',
-                enterActive: dir === 'left' ? 'slideInRight' : 'slideInLeft',
+                enterActive: dir ? (dir === 'left' ? 'slideInRight' : 'slideInLeft') : '',
                 exit: 'animated',
-                exitActive: dir === 'left' ? 'slideOutLeft' : 'slideOutRight'
+                exitActive: dir ? (dir === 'left' ? 'slideOutLeft' : 'slideOutRight') : ''
             }}
             unmountOnExit
             mountOnEnter

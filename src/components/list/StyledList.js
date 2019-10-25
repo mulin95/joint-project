@@ -8,9 +8,10 @@ const ListContainer = styled.div`
     height:100%;
     width:100%;
     ul {
-        height: 1.15rem;
+        height: 100%;
         width: 100%;
         position: relative;
+        overflow: scroll;
         li {
             margin: 0 .15rem;
             padding: .10rem 0 .17rem;

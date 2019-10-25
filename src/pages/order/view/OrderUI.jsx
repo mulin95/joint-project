@@ -19,6 +19,7 @@ const OrderUI = (props) => {
         <Container>
             <TitleBack
             title='我的订单'
+            leftEvent={(props) => {props.history.push('/index/profile')}}
             ></TitleBack>
             <TabBarContainer>
                 <ul>
@@ -30,10 +31,11 @@ const OrderUI = (props) => {
             </TabBarContainer>
 
             <ListBody>
-            <Route path={`${props.path}/all`} children={(prop) => <All list={props.list}></All>}></Route>
-            <Route path={`${props.path}/unpaid`} children={(prop) => <Unpaid list={props.list}></Unpaid>}></Route>
-            <Route path={`${props.path}/shipped`} children={(prop) => <Shipped list={props.list}></Shipped>}></Route>
-            <Route path={`${props.path}/receiving`} children={(prop) => <Receiving list={props.list}></Receiving>}></Route>
+            <Route path={`${props.path}/all`} children={(prop) => <All></All>}></Route>
+            <Route path={`${props.path}/unpaid`} children={(prop) => <Unpaid></Unpaid>}></Route>
+            <Route path={`${props.path}/shipped`} children={(prop) => <Shipped></Shipped>}></Route>
+            <Route path={`${props.path}/receiving`} children={(prop) => <Receiving></Receiving>}></Route>
+            <Redirect from={props.path} to={`${props.path}/all`} exact></Redirect>
             </ListBody>
         </Container>
     )

@@ -18,7 +18,7 @@ class Search extends Component {
     list:[]
   }
   async handleClick(value){
-    let res=await http.get('/huilme/a/m/RequestionController/interChange?requestiontitle='+value)
+    let res=await http.get('/huileme/a/m/RequestionController/interChange?requestiontitle='+value)
     this.setState({
       list:res.data.list
     })

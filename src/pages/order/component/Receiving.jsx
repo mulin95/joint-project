@@ -6,11 +6,13 @@ import {withRouter} from 'react-router-dom'
 
 import ListUI from 'components/list/ListUI'
 
+import connect from './connect'
+
+@connect
 class Receiving extends PureComponent {
     render() {
-        // console.log(this.props)
         return (
-            <ListUI list={this.props.list}>
+            <ListUI list={this.props.listt}>
 
             </ListUI>
         )

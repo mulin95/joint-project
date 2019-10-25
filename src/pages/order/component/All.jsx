@@ -8,16 +8,21 @@ import ListUI from 'components/list/ListUI'
 
 import connect from './connect'
 
+import http from 'utils/http'
+
 @connect
 class All extends PureComponent {
     render() {
         return (
             <ListUI 
-            list={this.props.list}
+            list={this.props.listt}
             dir={this.props.dir}
             >
             </ListUI>
         )
+    }
+    async componentDidMount() {
+        this.props.loadData()
     }
 }
 
