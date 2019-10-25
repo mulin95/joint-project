@@ -37,7 +37,7 @@ function App(props) {
         <Route path='/qualityInformation' component={QualityInformation}></Route>
         <Route path='/middleExercises' component={MiddleExercises}></Route>
         <Route path='/heightExercises' component={HeightExercises}></Route>
-        <Route path='/information' component={Information}></Route>
+        <Route path='/information/:id' component={Information}></Route>
         <Route path='/aftersale' component={AfterSale}></Route>
         <Route path='/buy' component={Buy}></Route>
         <Redirect from='/' to='/index' exact></Redirect>

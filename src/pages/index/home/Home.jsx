@@ -21,23 +21,15 @@ import{
 //图片
 import fdj from "../../../assets/images/fangdajing.png"
 
-// import http from 'utils/http'
-
 export default class Home extends Component {
   state={
-    list:[]
+    list:[],
+    subject:'math'
   }
-
-  // handleClick(id){
-  //   this.props.history.
-  // }
-
   render() {
     let {match,history}=this.props
-    
     return (
       <CateContainer>
-       
         <Search>
          <header>
            <div className="grade" onClick={()=>history.push("/grade")}>年级</div>

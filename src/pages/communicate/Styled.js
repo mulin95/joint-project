@@ -46,8 +46,8 @@ const AskContainer=styled.div`
     padding:0 .15rem;
     >div:nth-child(2){
       margin-top:.18rem;
-      width:3rem;
-      height:3rem;
+      width:2rem;
+      height:2rem;
       border:1px solid rgba(112,112,112,1);
       color:#707070;
       font-size:.11rem;

@@ -5,7 +5,7 @@
 1. SPA——(single page application)
 2. react
 3. CRA——(create-react-app)
-   - create-react-app
+   - react-app-rewired
    - customize-cra
 4. react-router-dom
 5. styled-components
