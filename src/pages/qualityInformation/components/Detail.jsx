@@ -6,7 +6,7 @@ import {withRouter} from 'react-router-dom'
 import {Detaill} from './StyledC'
 
 //图片
-import book from 'images/book.png'
+// import book from 'images/book.png'
 
 import http from 'utils/http'
 
@@ -21,9 +21,9 @@ class Detail extends PureComponent{
     }
     async componentDidMount(){
         let res= await http.get('/huileme/a/m/JingPinTopController/jingpintop')
-        // console.log(res)
+        console.log(res)
         this.setState({
-            list:res.data
+            list:res.data.topiclist
         })
     }
 

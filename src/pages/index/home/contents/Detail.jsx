@@ -21,10 +21,11 @@ class Detail extends PureComponent{
     }
     async componentDidMount(){
         let res= await http.get('/huileme/a/m/TopicController/homePage')
-        // console.log(res)
+        console.log(res)
         this.setState({
             list:res.data.topicList
         })
+
     }
 
     render(){
