@@ -73,9 +73,6 @@ class AddressAdd extends Component {
             shippingphone:this.state.userTel,
             address:this.state.userAddress
         }
-        
-        // console.log(this.state)
-        // console.log(data)
         await http.post(url,{
         　　headers: {
         　　　　'Content-Type': 'application/x-www-form-urlencoded',

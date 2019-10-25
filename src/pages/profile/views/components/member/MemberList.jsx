@@ -7,7 +7,6 @@ import member_6 from 'assets/profileImages/member-6.png'
 import member_7 from 'assets/profileImages/member-7.png'
 import member_8 from 'assets/profileImages/member-8.png'
 import arrow_left from 'assets/profileImages/arrow-left.png'
-import ButtonCom from '../titleCom/ButtonCom'
 
 import {
     MemberListCom
@@ -44,7 +43,6 @@ class MemberList extends Component {
                         <img src={member_8} alt=""/>
                     </div>
                 </div>
-                {/* <ButtonCom bottom="0" clickBtn={()=>this.handleClick()}/> */}
                 <div className="btn" onClick={()=>this.handleClick()}>
                     <div>
                         <span>立即开通</span>
