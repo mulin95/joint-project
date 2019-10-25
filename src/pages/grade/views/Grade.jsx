@@ -6,7 +6,21 @@ import{
     GradeContainer
 } from './StyledGrade'
 
+import http from 'utils/http'
+
 export default class Grade extends Component{
+    state={
+        list:[]
+    }
+    
+    async componentDidMount(){
+        let res= await http.get('/huileme/a/m/TopicController/homePage')
+        // console.log(res)
+        this.setState({
+            list:res.data.topicstageList
+        })
+    }
+
     render() {
         return (
             <>
@@ -16,9 +30,12 @@ export default class Grade extends Component{
                 <div className="classification">
                    <div className="title">初中</div>
                    <div>
-                      <button className="">初一</button>
-                      <button className="">初二</button>
-                      <button className="">初三</button>
+                       {/* {this.state.list.map((item)=>( */}
+                            <button className="">初一</button>
+                            <button className="">初二</button>
+                            <button className="">初三</button>
+                       {/* ))
+                    } */}
                    </div>      
                 </div>
 

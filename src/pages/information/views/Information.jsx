@@ -9,6 +9,8 @@ import{
     MEContainer
 } from './StyleInformation'
 
+import http from 'utils/http'
+
 //图片
 import bg1 from '../../../assets/images/bg1.png'
 import sdetail from '../../../assets/images/sdetail.png'
@@ -19,6 +21,18 @@ import spt4 from '../../../assets/images/spt4.png'
 import earphone from '../../../assets/images/earphone.png'
 
 export default class Information extends PureComponent{
+    state={
+        list:[]
+    }
+
+    async componentDidMount(){
+        let res= await http.get('/huileme/a/m/TopicDetailController/topdetail?topicId=1')
+        console.log(res)
+        this.setState({
+            list:res.data.topiclist
+        })
+    }
+
     render(){
         let {history}=this.props
         return(

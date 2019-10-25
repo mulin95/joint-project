@@ -11,9 +11,9 @@ export default class Swiper extends PureComponent {
     }
 
     async componentDidMount() {
-      let result = await http.get({url: '/api/swiper'})
+      let result = await http.get('/huileme/a/m/TopicController/homePage ')
       this.setState({
-        swiperList: result.data.slice(0, 5)
+        swiperList: result.data.rotationchartList
       })
     }
 
@@ -29,7 +29,7 @@ export default class Swiper extends PureComponent {
             >
               {
                 this.state.swiperList.map((value, index) => (
-                  <img key={value.id} src={value.img} alt=""/>
+                  <img key={value.id} src={value.rotationImg} alt=""/>
                 ))
               }
             </Carousel>)
