@@ -9,6 +9,14 @@ export default class Swiper extends PureComponent {
     state = {
       swiperList: []
     }
+
+    async componentDidMount() {
+      let result = await http.get({url: '/api/swiper'})
+      this.setState({
+        swiperList: result.data.slice(0, 5)
+      })
+    }
+
     render() {
         return (
           <Swiperr>
@@ -30,10 +38,4 @@ export default class Swiper extends PureComponent {
         )
       }
     
-      async componentDidMount() {
-        let result = await http.get({url: '/api/swiper'})
-        this.setState({
-          swiperList: result.data.slice(0, 5)
-        })
-      }
 }

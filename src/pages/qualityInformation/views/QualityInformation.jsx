@@ -45,15 +45,15 @@ export default class QualityInformation extends Component{
                                 <img src={cz} alt=""/>
                                 <span>初中真题</span>
                             </li>
-                            <li>
+                            <li onClick={()=>history.push("/middleExercises")}>
                                 <img src={cj} alt=""/>
                                 <span>初中教程</span>
                             </li>
-                            <li>
+                            <li onClick={()=>history.push("/middleExercises")}>
                                 <img src={gz} alt=""/>
                                 <span>高中真题</span>
                             </li>
-                            <li>
+                            <li onClick={()=>history.push("/middleExercises")}>
                                 <img src={gj} alt=""/>
                                 <span>高中教程</span>
                             </li>

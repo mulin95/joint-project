@@ -22,25 +22,25 @@ import topBar from 'images/topBar.png'
 export default class Contents extends PureComponent{
   render(){
     let {history}=this.props
-    // console.log(this.props)
+    console.log(this.props)
       return(
         <ContentsContainer>
           <SwiperContainer>
             <Swiper></Swiper>
             <ul>
-              <li>
+              <li onClick={()=>history.push("/index/practice")}>
                 <img src={z} alt=""/>
                 <span>综合练习</span>
               </li>
-              <li>
+              <li onClick={()=>history.push("/index/practice")}>
                 <img src={t} alt=""/>
                 <span>突破练习</span>
               </li>
-              <li>
+              <li onClick={()=>history.push("/index/practice")}>
                 <img src={n} alt=""/>
                 <span>难点练习</span>
               </li>
-              <li>
+              <li onClick={()=>history.push("/index/practice")}>
                 <img src={y} alt=""/>
                 <span>易错练习</span>
               </li>
