@@ -18,21 +18,26 @@ class Communicate extends Component {
     this.props.list.length===0&&this.props.loadData()
     
     // scroll
-    let bs=new BS(this.listBox.current,{
+    this.bs=new BS(this.listBox.current,{
       probeType:3,
       click:true
     })
-    bs.scrollTo(0,this.props.scroll)
+    this.bs.scrollTo(0,this.props.scroll)
     
-    bs.on('scroll',({x,y}) => {
+    this.bs.on('scroll',({x,y}) => {
       y=y>0?0:y
       y=-this.maxHeight>y?-this.maxHeight:y
+      console.log(y)
       this.props.saveScroll(y)
     })
+    // console.log(this.props,this.listBox.current.firstChild.offsetHeight)
   }
   componentDidUpdate(prevProps, prevState, snapshot){
+    // console.log(this.props,this.listBox.current.firstChild.offsetHeight)
     this.maxHeight=this.listBox.current.firstChild.offsetHeight-this.listBox.current.offsetHeight
-    
+  }
+  componentWillUnmount(){
+    this.bs.stop()
   }
 
   render() {
