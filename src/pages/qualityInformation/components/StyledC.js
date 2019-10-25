@@ -20,6 +20,7 @@ const Detaill=border({
             font-size:.14rem;
             color:#333333;
             height:41%;
+            margin-left:.13rem;
             }
         >div{
                 display:flex; 

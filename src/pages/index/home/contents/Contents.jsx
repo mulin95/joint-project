@@ -33,7 +33,7 @@ export default class Contents extends PureComponent{
   }
   async loadData(){
     let {subject}=this.props.match.params
-    let res= await http.get('/huileme/a/m/TopicController/homePage?subjectId='+subMap[subject]+'&&gradeid='+localStorage.getItem('grade')||1)
+    let res= await http.get('/huileme/a/m/TopicController/homePage?subjectId='+subMap[subject]+'&&gradeid='+(localStorage.getItem('grade')||1))
     this.setState({
       topicList:res.data.topicList,
       swiperList:res.data.rotationchartList

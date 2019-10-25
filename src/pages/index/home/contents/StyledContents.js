@@ -80,7 +80,7 @@ const Detaill=border({
       display:flex;
       justify-content:space-between;
       flex-direction:column;
-      padding-left:.05rem;
+      padding-left:.1rem;
       .ti{
         font-size:.14rem;
         color:#333333;
