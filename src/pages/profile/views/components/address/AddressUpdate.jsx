@@ -77,8 +77,7 @@ class AddressUpdate extends Component {
         })
     }
     successToast=async()=> {
-
-        let url = '/huileme/a/u/ShippingaddressController/addshippingAddress'
+        let url = '/huileme/a/u/ShippingaddressController/updetshippingAddress'
         let data = {
             shippingid:this.state.userId,
             shippingpeople:this.state.userName,
@@ -86,8 +85,8 @@ class AddressUpdate extends Component {
             address:this.state.userAddress
         }
         
-        console.log(this.state)
-        console.log(data)
+        // console.log(this.state)
+        // console.log(data)
         await http.post(url,{
         　　headers: {
         　　　　'Content-Type': 'application/x-www-form-urlencoded',

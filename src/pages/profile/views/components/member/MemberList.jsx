@@ -44,7 +44,12 @@ class MemberList extends Component {
                         <img src={member_8} alt=""/>
                     </div>
                 </div>
-                <ButtonCom bottom=".37" clickBtn={()=>this.handleClick()}/>
+                {/* <ButtonCom bottom="0" clickBtn={()=>this.handleClick()}/> */}
+                <div className="btn" onClick={()=>this.handleClick()}>
+                    <div>
+                        <span>立即开通</span>
+                    </div>
+                </div>
             </MemberListCom>
         );
     }
