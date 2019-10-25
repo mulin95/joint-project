@@ -20,7 +20,7 @@ export default withRouter(function titleBack(props) {
             </div>
             ) :
             (
-              <div className='backImg left' onClick={() => props.history.goBack()}>
+              <div className='backImg left' onClick={() => props.leftEvent?props.leftEvent(props):props.history.goBack()}>
                 <img src={backImg} alt="" />
               </div>
             )

@@ -6,21 +6,32 @@ import TitleBack from 'components/titleBack/TitleBack'
 import InputBar from '../componet/InputBar'
 import Cell from 'components/communicate/Cell'
 
+import http from 'utils/http'
+
+import connect from './connect'
 
 import emptyImg from 'images/empty.png'
 
-export default class Search extends Component {
+@connect
+class Search extends Component {
   state={
-    items:[]
+    list:[]
   }
+  async handleClick(value){
+    let res=await http.get('/huilme/a/m/RequestionController/interChange?requestiontitle='+value)
+    this.setState({
+      list:res.data.list
+    })
+  }
+
   render() {
     return (
       <SearchContainer>
         <TitleBack></TitleBack>
         <div className='container'>
-          <Input></Input>
+          <Input onClick={this.handleClick.bind(this)}></Input>
           {
-            this.state.items.length===0
+            this.state.list.length===0
             ?(
               <div className='empty'>
                 <div>
@@ -32,20 +43,24 @@ export default class Search extends Component {
             :(
               <ul>
                 {
-                  this.state.items.map((item) => (
+                  this.state.list.map((item) => (
                     <Cell 
-                      key={item}
+                      key={item.requestionid}
                       {...item}
+                      onJump={() => {
+                        this.props.history.push('/communicate/'+item.requestionid)
+                      }}
                     ></Cell>
                   ))
                 }
               </ul>
-              
             )
           }
         </div>
-        {this.state.items.length===0||<InputBar></InputBar>}
+        {this.state.list.length===0||<InputBar></InputBar>}
       </SearchContainer>
     )
   }
 }
+
+export default Search

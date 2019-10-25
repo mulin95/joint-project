@@ -18,7 +18,7 @@ function Cell(props) {
 
   const handleZan=useCallback(() => {
     setZan(!stateZan)
-  })
+  },[stateZan])
 
   return (
     <CellContainer >

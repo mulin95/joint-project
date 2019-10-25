@@ -57,12 +57,26 @@ const AskContainer=styled.div`
     }
   }
 `
-const InputContainer=border({
+const InputContainer=styled.div`
+  display:flex;
+  button{
+    margin-left:.15rem;
+    width:.55rem;
+    height:.30rem;
+    background:rgba(255,255,255,1);
+    border-radius:.04rem;
+    border:1px solid rgba(207,207,207,1);
+    font-size:.14rem;
+    color:#666;
+  }
+`
+const InputBorder=border({
   width:'0 0 1px',
   comp:styled.div`
+    display:flex;
     height:.3rem;
     position: relative;
-    display:flex;
+    flex:1;
     align-items:center;
     input{
       width:100%;
@@ -142,5 +156,6 @@ export{
   InputBar,
   AskContainer,
   InputContainer,
+  InputBorder,
   SearchContainer
 }
