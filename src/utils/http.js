@@ -4,9 +4,10 @@ export default {
     console.log(options)
     console.log(url)
     return fetch(url)
-      .then(response => 
-      console.log(response)
-      // response.json()
+      .then(response => {
+        localStorage.setItem("x-access-token",response.headers.get('content-type'))
+        return response.json()
+      }
       )
       .then(result => {
         console.log(result)
@@ -25,8 +26,13 @@ export default {
       method: 'POST',
       ...options
     })
-      .then(response => response.json())
+      .then(response => {
+        localStorage.setItem("x-access-token",response.headers.get('content-type'))
+        return response.json()
+      }
+      )
       .then(result => {
+        Headers.values()
         return result
       })
   }

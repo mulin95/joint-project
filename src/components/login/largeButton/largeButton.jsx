@@ -18,21 +18,28 @@ class largeButton extends React.Component {
     }
 
     getVerify = async () => {
-        {console.log(this.props.phoneNum)}
+        { console.log(this.props.phoneNum) }
         if (this.props.retry === false) {
-            if (this.props.rout === "wu") {
-               let ss=  await utils.post("/huilme/a/m/UserController/phoneLogin",{
-                    data:{
-                        phoneNumber:this.props.phoneNum,
-                        verificationCode:this.props.code.join(''),
-                    },
-                    headers:{
-                        'content-type':"application/x-www-form-urlencoded"
+            if (this.props.rout === "wu" && this.props.regRout==="undefined") {
+                let ss = await utils.post("/huileme/a/m/UserController/phoneLogin", {
+                    body: `phoneNumber=${this.props.phoneNum}&verificationCode=${this.props.code.join('')}`,
+                    headers: {
+                        'content-type': "application/x-www-form-urlencoded"
                     }
                 })
-
-                console.log(ss)
-            } else {
+            } else if (this.props.regRout === "") {
+                await utils.post("/huileme/a/m/UserController/phoneLogin", {
+                    body: `email=${this.props.setEmail}&userPassWord=${this.props.verifyCode}&verificationCode=${this.props.newWord}`,
+                })
+                this.props.history.push('/login/email')
+            }
+            else if (this.props.emailLog === "") {
+                console.log(this.props)
+                await utils.post("/huileme/a/m/UserController/emailLogin", {
+                    body: `email=${this.props.emailLogNum}&userPassWord=${this.props.emailLogWord}`
+                })
+            }
+            else {
                 console.log(utils.get)
                 console.log(this.props)
 

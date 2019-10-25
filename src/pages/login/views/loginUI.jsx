@@ -32,8 +32,9 @@ export default class LoginUI extends React.Component {
                     skipToGetVerify={this.props}
                     retry={false}
                     type="get"
-                    url="/huilme/a/m/UserController/loginpasswordto"
+                    url="/huileme/a/m/UserController/loginpasswordto"
                     data={{phoneNum:this.state.number}}
+                    
                 ></LargeButton>
                 <p className='passw' onClick={this.props.passwLogin}>密码登录</p>
                 <p className="otherlogin">其他方式登录</p>
