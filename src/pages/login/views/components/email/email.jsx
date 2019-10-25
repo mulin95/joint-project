@@ -36,8 +36,10 @@ class email extends Component {
         )
     }
     comfirmPwd = (e) => {
-        this.state.emailLogWord = e
-        console.log(this.state.emailLogWord)
+        // this.state.emailLogWord = e
+        this.setState({
+            emailLogWord:e
+        })
     }
     skipRout = () => {
         this.props.history.push("/login/email/forget")

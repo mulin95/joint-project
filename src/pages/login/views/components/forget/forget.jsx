@@ -4,7 +4,7 @@ import Back from 'components/titleBack/TitleBack'
 import Input from 'components/login/input/input'
 import LargeButton from 'components/login/largeButton/largeButton'
 
-import utils from 'utils/http.js'
+import lgutils from 'lgutils/http.js'
 import ForgetContainer from './foretStyled'
 class Forget extends Component {
     constructor() {
@@ -35,6 +35,7 @@ class Forget extends Component {
                         text="登录"
                         rout="wu"
                         regRout=""
+                        emailReg="e"
                     ></LargeButton>
                 </div>
             </ForgetContainer>
@@ -42,16 +43,20 @@ class Forget extends Component {
         )
     }
     comfirmVerify = (e) => {
-        this.state.verifyCode = e
-        console.log(this.state.verifyCode)
+       
+        this.setState({
+            verifyCode:e
+        })
     }
     comfirmPwd = (e) => {
-        this.state.value = e
-        console.log(this.state.value)
+  
+        this.setState({
+            value:e
+        })
     }
     getVerify = async () => {
         let sss = localStorage.getItem("email")
-        await utils.get(`/huileme/a/m/UserController/getCode?userName=${encodeURIComponent(sss)}`)
+        await lgutils.get(`/huileme/a/m/UserController/getCode?userName=${encodeURIComponent(sss)}`)
 
 
     }
