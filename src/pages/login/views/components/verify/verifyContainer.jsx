@@ -20,7 +20,9 @@ class Verify extends PureComponent {
             retry: false,
             retryText: "重新发送验证码",
             inputClick: 0,
-            siv: null
+            siv: null,
+            value: [],
+            no: 0
         }
     }
 
@@ -28,7 +30,7 @@ class Verify extends PureComponent {
         this.count()
     }
     count = () => {
-        
+
         this.state.siv = setInterval(() => {
             let tem = this.state.yztime
             this.setState({
@@ -46,7 +48,7 @@ class Verify extends PureComponent {
             , 1000)
     }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
         clearInterval(this.state.siv)
     }
     render() {
@@ -62,11 +64,14 @@ class Verify extends PureComponent {
                                 <input onClick={() => {
                                     this.verifyLineInput()
                                 }}
+                                    value={this.state.value[index] }
+                                    onChange={this.ver}
                                     maxLength="1"
                                     key={value + 1}
                                     type="text"
                                     className="verifyLineInput"
                                 />
+
                                 <img key={value + 2} className="verifyLine" src={verifyLine} alt="" />
                             </div>
                         ))
@@ -76,13 +81,27 @@ class Verify extends PureComponent {
                     {this.state.yztime}秒后重试
                     </p>
                 {/* retry表示返回发送验证码界面 */}
-                <LargeButton  Submit={this.verifySubmit}text="登录/注册" retry={this.state.retry} retryText={this.state.retryText} rout={"wu"} ></LargeButton>
+                <LargeButton phoneNum={localStorage.getItem("phoneNum")} code={this.state.value} Submit={this.verifySubmit} text="登录/注册" retry={this.state.retry} retryText={this.state.retryText} rout={"wu"} ></LargeButton>
             </VerifyContanier>
         )
     }
-    verifyLineInput=() => {
+    ver = (e) => {
+            if(this.state.value.length !== 0){
+            this.setState({
+                value: [...this.state.value,e.target.value]
+            })
+            } else {
+                this.setState({
+                value: [e.target.value]
+            })
+            }
+            console.log(this.state.value)
+
+    }
+
+    verifyLineInput = () => {
         this.setState({
-            verifyLineInput:++this.state.verifyLineInput
+            verifyLineInput: ++this.state.verifyLineInput
         })
     }
 }

@@ -20,4 +20,8 @@ module.exports = function(app) {
     target: 'http://101.200.54.176:8080',
     changeOrigin: true,
   }))
+    app.use('/loginpassword1', proxy({
+    target: 'http://101.200.54.176:8080',
+    changeOrigin: true,
+  }))
 }
