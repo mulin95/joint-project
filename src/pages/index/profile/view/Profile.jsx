@@ -52,6 +52,13 @@ const MsgList = [
         iconRight : arrow,
         route:'service'
     },
+    {
+        id:5,
+        iconLeft : member,
+        text : '登陆中心',
+        iconRight : arrow,
+        route:'login'
+    },
 ]
 
 class ProfileContainer extends Component {
@@ -124,6 +131,8 @@ class ProfileContainer extends Component {
             this.props.history.push('/'+route);
         }else if(route === 'service'){
             this.props.history.push('/aftersale');
+        }else if(route === 'login'){
+            this.props.history.push('/login');
         }else{
             this.props.history.push('/profile/'+route);
         }
