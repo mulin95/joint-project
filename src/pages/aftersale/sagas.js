@@ -8,7 +8,7 @@ import token from 'assets/token'
 
 function loadDataSaga() {
   return takeEvery(SAGA_LOAD_DATA, function* () {
-    let result = yield http.post('/huileme/a/u/wode/OrdertopicController/afterSale',
+    let result = yield http.post('/huileme/a/u/wode/OrdertopicController/afterSale?topicState=0',
     {
       headers: {
         'x-access-token': token,
