@@ -27,12 +27,15 @@ const GradeContainer=border({
                 height:.3rem;
                 text-align:center;
                 line-height:.3rem;
-                background:#C8E0FF;
+                background:#fff;
                 border-radius:.04rem;
                 color:#2F8AFF;
                 font-size:.14rem;
                 border:1px solid #2F8AFF;
                 margin-top:.28rem;
+                &.active{
+                    background:#C8E0FF;
+                }
              }
           }
         }

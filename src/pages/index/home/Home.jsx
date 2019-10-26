@@ -11,8 +11,6 @@ import{
 //组件
 import Content from './contents/Contents'
 
-
-
 //样式
 import{
   CateContainer,
@@ -24,11 +22,14 @@ import{
 import fdj from "../../../assets/images/fangdajing.png"
 
 export default class Home extends Component {
+  state={
+    list:[],
+    subject:'math'
+  }
   render() {
     let {match,history}=this.props
     return (
       <CateContainer>
-       
         <Search>
          <header>
            <div className="grade" onClick={()=>history.push("/grade")}>年级</div>

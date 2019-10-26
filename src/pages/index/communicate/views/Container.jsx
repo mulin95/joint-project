@@ -2,6 +2,7 @@ import React, { Component, createRef } from 'react'
 
 import connect from './connect'
 import UI from './UI'
+import http from "utils/http";
 
 import BS from 'better-scroll'
 
@@ -27,7 +28,6 @@ class Communicate extends Component {
     this.bs.on('scroll',({x,y}) => {
       y=y>0?0:y
       y=-this.maxHeight>y?-this.maxHeight:y
-      console.log(y)
       this.props.saveScroll(y)
     })
     // console.log(this.props,this.listBox.current.firstChild.offsetHeight)

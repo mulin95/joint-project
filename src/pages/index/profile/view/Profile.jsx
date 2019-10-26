@@ -6,10 +6,9 @@ import address  from 'assets/profileImages/address.png';
 import member   from 'assets/profileImages/member.png';
 import service  from 'assets/profileImages/service.png';
 import arrow    from 'assets/profileImages/arrow.png';
-import user     from 'assets/profileImages/user.png';
+import user_5   from 'assets/profileImages/user-5.png'
 
-import connect from './connect'
-import axios from 'axios'
+import http from 'utils/http'
 
 import {
     Profile,
@@ -49,14 +48,39 @@ const MsgList = [
     {
         id:4,
         iconLeft : service,
-        text : '售后客服',
+        text : '我的售后',
         iconRight : arrow,
         route:'service'
     },
 ]
 
-@connect
 class ProfileContainer extends Component {
+    constructor(){
+        super()
+        
+        let userToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ4ZGNsYXNzIiwiaWQiOiI1OGVjNTEzNTAxMzI0NWI1OWM5ZDEyNWY0OGM0ZWM1MCIsInBob25lIjoiMTUyMzU2ODIyODgiLCJpYXQiOjE1NzE5OTAzMTgsImV4cCI6MTU3MjU5NTExOH0.CihVzf6JJlOnN2VlQT8yszvI97lR1yv-IjwDIX2-mYo";
+        let userToken2 = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ4ZGNsYXNzIiwiaWQiOiI3ZjhlOTQxMDI0NzI0ZDBhYjJhOGJjZjM3ODVjYThmNyIsInBob25lIjoiMTU3MjkyNTYwMjkiLCJpYXQiOjE1NzIwMjczMzYsImV4cCI6MTU3MjYzMjEzNn0.gCKmkw4Z_-ZuOYiktnSwnGbiMbtTK2v1q433rwEAKBE"
+        localStorage.setItem('token',userToken2)
+        
+        this.isLogin()
+    }
+    async isLogin(){
+        // let url = '/huileme/a/u/wode/UserController/FindByid';
+        let url = '/huileme/a/u/userManagementController/accountu';
+        let result = await http.get(url,{
+            headers: {
+        　　　　'x-access-token': localStorage.getItem('token')||''
+        　　},
+        })
+        // console.log(result)
+        if(!result.code){
+            this.props.history.push('/login');
+        }else{
+            this.setState({
+                userName:result.data.userNickname
+            })
+        }
+    }
     state={
         userId:'',
         userName:''
@@ -69,9 +93,9 @@ class ProfileContainer extends Component {
                 <span onClick={()=>history.push("/profile/setUp")}></span>
                 <dl>
                     <dt>
-                        <img src={user} alt=""/>
+                        <img src={user_5} alt=""/>
                     </dt>
-                    <dd onClick={()=>this.changeName()}>{this.state.userName}</dd>
+                    <dd onClick={()=>this.changeName()}>{this.state.userName||'点击设置昵称'}</dd>
                 </dl>
             </header>    
             <Content>
@@ -95,25 +119,18 @@ class ProfileContainer extends Component {
         </Profile>
         )
     }
-    async componentDidMount(){
-        let result = await axios.get('/user')
-        this.setState({
-            userId:result.data[0].id,
-            userName:result.data[0].username
-        })
-    }
     handlerClick(route){
         if(route === 'order'){
             this.props.history.push('/'+route);
+        }else if(route === 'service'){
+            this.props.history.push('/aftersale');
         }else{
             this.props.history.push('/profile/'+route);
         }
     }
     changeName(){
-        let {userId,userName} = this.state
         let user = {
-            userId,
-            userName
+            userName:this.state.userName || '点击设置昵称'
         }
         this.props.history.push('/profile/user/add',{user:user})
     }

@@ -17,11 +17,11 @@ class MemberOppen extends Component {
                 <TitleBack title="会了么会员" />
                 <div className="user">
                     <img src={user} alt=""/>
-                    <p>
+                    <div className="til">
                         <div className="name">学员20</div>
                         <span>当前未开通VIP</span>
                         <img src={member} alt=""/>
-                    </p>
+                    </div>
                 </div>
                 <div className="member">
                     <p className="vip">VIP专属特权</p>

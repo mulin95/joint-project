@@ -12,6 +12,7 @@ import {Search} from 'pages/search/';
 import {Practice} from 'pages/practice/';
 import {QualityInformation} from 'pages/qualityInformation/';
 import {MiddleExercises} from 'pages/middleExercises/';
+import {HeightExercises} from 'pages/heightExercises/';
 import {Information} from 'pages/information/';
 import {Buy} from 'pages/buy/index.js';
 import {AfterSale} from 'pages/aftersale/index.js';
@@ -35,7 +36,8 @@ function App(props) {
         <Route path='/practice' component={Practice}></Route>
         <Route path='/qualityInformation' component={QualityInformation}></Route>
         <Route path='/middleExercises' component={MiddleExercises}></Route>
-        <Route path='/information' component={Information}></Route>
+        <Route path='/heightExercises' component={HeightExercises}></Route>
+        <Route path='/information/:id' component={Information}></Route>
         <Route path='/aftersale' component={AfterSale}></Route>
         <Route path='/buy' component={Buy}></Route>
         <Redirect from='/' to='/index' exact></Redirect>

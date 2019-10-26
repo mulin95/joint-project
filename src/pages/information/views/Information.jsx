@@ -9,6 +9,8 @@ import{
     MEContainer
 } from './StyleInformation'
 
+import http from 'utils/http'
+
 //图片
 import bg1 from '../../../assets/images/bg1.png'
 import sdetail from '../../../assets/images/sdetail.png'
@@ -19,6 +21,18 @@ import spt4 from '../../../assets/images/spt4.png'
 import earphone from '../../../assets/images/earphone.png'
 
 export default class Information extends PureComponent{
+    state={
+        data:{}
+    }
+
+    async componentDidMount(){
+        let res= await http.get('/huileme/a/m/TopicDetailController/topdetail?topicId='+this.props.match.params.id)
+        console.log(res)
+        this.setState({
+            data:res.data
+        })
+    }
+
     render(){
         let {history}=this.props
         return(
@@ -32,28 +46,28 @@ export default class Information extends PureComponent{
                         }}> 
                         </TitleBack>    
                     </MEContainer>
-                        <img src={bg1} alt="" className="bg1"/>
+                        <img src={this.state.data.topicImg} alt="" className="bg1"/>
                         <div className="fit">
                             <div className="price">
-                                <div className="price1">￥100</div>
+                                <div className="price1">￥{this.state.data.price}</div>
                                 <div className="vip">
-                                    <span className="vipprice">￥92</span>
+                                    <span className="vipprice">￥{this.state.data.vipPrice}</span>
                                     <span className="vipp">VIP</span>
                                 </div>
                             </div>
-                            <div className="title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称</div>
+                            <div className="title">{this.state.data.topicName}</div>
                             <div className="fitgrade">
                                 <span className="grade1">适用年级</span>
-                                <span className="grade2">初中</span>
+                                <span className="grade2">{this.state.data.applyStage}</span>
                             </div>
                             <div className="fitgrade">
-                                <span className="grade1">适用阶段</span>
-                                <span className="grade2">初一</span>
+                                <span className="grade1">适用科目</span>
+                                <span className="grade2">{this.state.data.topicSubject}</span>
                             </div>
                         </div>
                         <div className="center">
                             <div><img src={sdetail} alt="" className="sdetail" /></div>
-                            <div><img src={spt1} alt="" className="spt1" /> </div>
+                            <div><img src={this.state.data.commoditypicture} alt="" className="spt1" /> </div>
                         </div>
                         <img src={spt2} alt="" className="spt2" />
                         <img src={spt3} alt="" className="spt3" />

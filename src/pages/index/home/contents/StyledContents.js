@@ -14,10 +14,10 @@ const SwiperContainer=border({
     padding:.2rem .15rem 0;
     width:100%;
     height:2.64rem;
-    ul{
-      height:.65rem;
+    .navBar{
+      height:.25rem;
       display:flex;
-      margin-top:1.6rem;
+      margin-top:.35rem;
       justify-content:space-between;
       li{
         font-size:.11rem;
@@ -80,7 +80,7 @@ const Detaill=border({
       display:flex;
       justify-content:space-between;
       flex-direction:column;
-      padding-left:.05rem;
+      padding-left:.1rem;
       .ti{
         font-size:.14rem;
         color:#333333;

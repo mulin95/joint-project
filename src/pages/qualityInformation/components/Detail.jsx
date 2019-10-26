@@ -6,37 +6,49 @@ import {withRouter} from 'react-router-dom'
 import {Detaill} from './StyledC'
 
 //图片
-import book from 'images/book.png'
+// import book from 'images/book.png'
+
 
 class Detail extends PureComponent{
+
+    handleClick(id){
+        this.props.history.push("/information/"+id)
+    }
+
     render(){
-        let {history}=this.props
         return(
             <div>
-                <div onClick={()=>history.push("/information")}>
-                <Detaill>
-                    <img src={book} alt=""/>
-                    <div>
-                        <span className="ti">习题习题习题习题习题习题习题习题习题</span>
-                        <div>
-                            <div className="msg">
-                                <div className='grade'>高一数学</div>
-                                <div className="advantage">习题优点简述习题优点简述</div>
-                            </div>
-                            <div className="price">
-                                <div className="price1">
-                                    <span>￥</span>100
+                <div>
+                    {
+                        this.props.list.map((item)=>(
+                            <Detaill
+                                key={item.topicId}
+                                onClick={this.handleClick.bind(this,item.topicId)}
+                            >
+                                <img src={item.topicImg} alt=""/>
+                                <div>
+                                    <span className="ti">{item.topicName}</span>
+                                    <div>
+                                        <div className="msg">
+                                            <div className='grade'>{item.applyStage+item.topicSubject}</div>
+                                            <div className="advantage">{item.sketch}</div>
+                                        </div>
+                                        <div className="price">
+                                            <div className="price1">
+                                                <span>￥</span>{item.price}
+                                            </div>
+                                            <div className="vip">
+                                                <span className="vipprice">￥{item.vipPrice}</span>
+                                                <span className="vipp">VIP</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="vip">
-                                    <span className="vipprice">￥92</span>
-                                    <span className="vipp">VIP</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                 </Detaill>
+                            </Detaill>
+                        ))
+                    }
                  </div>
-                 <Detaill>
+                 {/* <Detaill>
                     <img src={book} alt=""/>
                     <div>
                         <span className="ti">习题习题习题习题习题习题习题习题习题</span>
@@ -98,9 +110,8 @@ class Detail extends PureComponent{
                             </div>
                         </div>
                     </div>
-                 </Detaill>               
-            </div>
-            
+                 </Detaill>                */}
+            </div>           
         )      
     }
 }

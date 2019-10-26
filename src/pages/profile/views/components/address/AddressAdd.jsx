@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 
-import {AddressAddCom} from './styledAddress';
+import { AddressAddCom } from './styledAddress';
 import TitleBack from 'components/titleBack/TitleBack';
-import { Toast, WhiteSpace, WingBlank, Button } from 'antd-mobile';
+import http from 'utils/http'
+import qs from 'qs'
+import { 
+    Toast, 
+    WhiteSpace, 
+    WingBlank, 
+    Button 
+} from 'antd-mobile';
 
 class AddressAdd extends Component {
     state = {
+        userId:'',
         userName:'',
-        userTel:''
+        userTel:'',
+        userAddress:''
     }
     render() {
         return (
             <AddressAddCom>
-                <TitleBack className="title" title="编辑地址" >
+                <TitleBack className="title" title="添加地址" >
                     <WingBlank className="and-com">
                         <WhiteSpace />
                             <Button onClick={this.successToast}>保存</Button>
@@ -26,8 +35,8 @@ class AddressAdd extends Component {
                             type="text" 
                             name="userName" 
                             value={this.state.userName} 
-                            onChange={this.changeName
-                        } />
+                            onChange={this.changeName} 
+                        />
                     </label>
                     <label htmlFor="tel">
                         <p>手机号码:</p>
@@ -36,43 +45,58 @@ class AddressAdd extends Component {
                             type="text" 
                             name="userTel" 
                             value={this.state.userTel}
-                            onChange={this.changeTel
-                        }/>
+                            onChange={this.changeTel}
+                        />
                     </label>
-                    <label htmlFor="address_1">
+                    {/* <label htmlFor="address_1">
                         <p>所在地区:</p>
                         <input id="address_1" type="text"/>
-                    </label>
-                    <label htmlFor="address_1">
+                    </label> */}
+                    <label htmlFor="address_2">
                         <p>详细地址:</p>
-                        <input id="address_2" type="text" name="userAddress"/>
+                        <input 
+                            id="address_2" 
+                            type="text" 
+                            name="address_2"
+                            value={this.state.userAddress}
+                            onChange={this.changeAddress}
+                        />
                     </label>
                 </form>
             </AddressAddCom>
         );
     }
-    componentDidMount(){
-        const query = this.props.location.query;
-        this.setState({
-            userName:query.name,
-            userTel:query.tel
+    successToast=async()=> {
+        let url = '/huileme/a/u/ShippingaddressController/addshippingAddress'
+        let data = {
+            shippingpeople:this.state.userName,
+            shippingphone:this.state.userTel,
+            address:this.state.userAddress
+        }
+        await http.post(url,{
+        　　headers: {
+        　　　　'Content-Type': 'application/x-www-form-urlencoded',
+                'x-access-token':localStorage.getItem('token')
+        　　},
+            body:qs.stringify(data)
         })
-    }
-    successToast=()=> {
-        Toast.success('保存收货地址成功', 0.6,()=>{
+        Toast.success('添加收货地址成功', 0.6,()=>{
             this.props.history.goBack();
         });
     }
+    changeName=(e)=>{
+        this.setState({
+            userName:e.target.value
+        })
+    }
     changeTel=(e)=>{
-        console.log(e.target.value)
         this.setState({
             userTel:e.target.value
         })
     }
-    changeName=(e)=>{
-        console.log(e.target.value)
+    changeAddress=(e)=>{
         this.setState({
-            userName:e.target.value
+            userAddress:e.target.value
         })
     }
 }
