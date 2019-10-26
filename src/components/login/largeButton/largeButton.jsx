@@ -44,7 +44,7 @@ class largeButton extends React.Component {
                 this.props.history.push('/login/email')
             }
             else if (this.props.regRout === "" && this.props.emailReg == "e") {
-                
+
                 await lgutils.post("/huileme/a/m/UserController/emailRegister", {
                     body: `email=${this.props.setEmail}&userPassWord=${this.props.newWord}&verificationCode=${this.props.verifyCode}`,
                     headers: {
@@ -77,7 +77,7 @@ class largeButton extends React.Component {
 
             }
             else {
-            
+
                 if (this.props.type === "get" && this.props.data != "") {
                     await lgutils.get(`${this.props.url}?${Object.keys(this.props.data)}=${Object.values(this.props.data)}`)
                     this.props.history.push(this.props.skipToGetVerify.rout)
