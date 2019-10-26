@@ -30,13 +30,13 @@ class email extends Component {
                     rout="wu"
                     emailLog=""
                 ></LargeButton>
-                {console.log(this.state.emailLogWord)}
+                
                 <p className="textSkip" onClick={this.skipRout}>忘记密码</p>
             </EmailContainer>
         )
     }
     comfirmPwd = (e) => {
-        // this.state.emailLogWord = e
+       
         this.setState({
             emailLogWord:e
         })

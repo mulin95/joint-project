@@ -104,8 +104,7 @@ class Verify extends PureComponent {
                 value: [e.target.value]
             })
         }
-        console.log(this.state.value)
-
+        
     }
 
     verifyLineInput = () => {

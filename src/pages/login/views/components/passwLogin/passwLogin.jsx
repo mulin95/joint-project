@@ -35,7 +35,6 @@ class Item extends Component {
         this.props.history.push("/login/email/forget")
     }
     skipVerifyCode= () => {
-        console.log(1)
         this.props.history.push("/login")
     }
 }

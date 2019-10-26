@@ -12,7 +12,7 @@ class Input extends Component {
         }
     }
     render() {
-        console.log(this.props)
+       
         return (
             <InputContainer>
                 <input className="text" type="text" placeholder={this.props.text} value={this.state.value} onChange={this.getEmail} />
