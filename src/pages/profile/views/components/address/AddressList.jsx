@@ -78,7 +78,7 @@ class AddressList extends Component {
                 'x-access-token':localStorage.getItem('token')
             }
         })
-        console.log(result)
+        // console.log(result)
         if(result.message === "数据没有查询到"){
 
         }else{

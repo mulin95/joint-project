@@ -17,11 +17,11 @@ class MemberBack extends Component {
                 <TitleBack title="会了么会员" />
                 <div className="user">
                     <img src={user} alt=""/>
-                    <p>
-                        <h3>学员20</h3>
+                    <div className="content">
+                        <div className="name">学员20</div>
                         <span>当前未开通VIP</span>
                         <img src={member} alt=""/>
-                    </p>
+                    </div>
                 </div>
                 <div className="title">
                     恭喜您成为会了么会员

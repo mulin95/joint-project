@@ -73,9 +73,6 @@ class AddressAdd extends Component {
             shippingphone:this.state.userTel,
             address:this.state.userAddress
         }
-        
-        // console.log(this.state)
-        // console.log(data)
         await http.post(url,{
         　　headers: {
         　　　　'Content-Type': 'application/x-www-form-urlencoded',
@@ -83,7 +80,6 @@ class AddressAdd extends Component {
         　　},
             body:qs.stringify(data)
         })
-
         Toast.success('添加收货地址成功', 0.6,()=>{
             this.props.history.goBack();
         });

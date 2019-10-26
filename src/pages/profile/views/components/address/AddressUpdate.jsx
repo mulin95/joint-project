@@ -10,6 +10,7 @@ import {
     WingBlank, 
     Button 
 } from 'antd-mobile';
+import ButtonCom from '../titleCom/ButtonCom'
 
 class AddressUpdate extends Component {
     state = {
@@ -63,8 +64,19 @@ class AddressUpdate extends Component {
                         />
                     </label>
                 </form>
+                <ButtonCom title="删除收货地址" bottom="1" clickBtn={()=>this.handleClick()}/>
             </AddressAddCom>
         );
+    }
+    async handleClick(){
+        let url = '/huileme/a/u/ShippingaddressController/deleteid?shippingid='+this.props.location.state.address.id;
+        await http.delete(url,{
+        　　headers: {
+        　　　　'Content-Type': 'application/x-www-form-urlencoded',
+                'x-access-token':localStorage.getItem('token')
+        　　},
+        })
+        this.props.history.goBack();
     }
     componentDidMount(){
         let address= this.props.location.state.address
@@ -77,8 +89,7 @@ class AddressUpdate extends Component {
         })
     }
     successToast=async()=> {
-
-        let url = '/huileme/a/u/ShippingaddressController/addshippingAddress'
+        let url = '/huileme/a/u/ShippingaddressController/updetshippingAddress'
         let data = {
             shippingid:this.state.userId,
             shippingpeople:this.state.userName,
@@ -86,8 +97,8 @@ class AddressUpdate extends Component {
             address:this.state.userAddress
         }
         
-        console.log(this.state)
-        console.log(data)
+        // console.log(this.state)
+        // console.log(data)
         await http.post(url,{
         　　headers: {
         　　　　'Content-Type': 'application/x-www-form-urlencoded',

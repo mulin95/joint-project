@@ -1,58 +1,66 @@
-import React, { Component } from 'react' 
+import React, { Component } from 'react'
 
 import TitleBack from 'components/titleBack/TitleBack'
 
-import{
+import {
     GradeContainer
 } from './StyledGrade'
 
-import http from 'utils/http'
+const clist = ['初一', '初二', '初三']
+const glist = ['高一', '高二', '高三']
 
-export default class Grade extends Component{
+export default class Grade extends Component {
     state={
-        list:[]
+        active:localStorage.getItem('grade')||1
     }
-    
-    async componentDidMount(){
-        let res= await http.get('/huileme/a/m/TopicController/homePage')
-        // console.log(res)
+    handleClick(id){
         this.setState({
-            list:res.data.topicstageList
+            active:id
         })
     }
-
+    handleSub(){
+        localStorage.setItem('grade',this.state.active)
+        console.log(this.props.history)
+        this.props.history.goBack()
+    }
+    
     render() {
         return (
             <>
-            <TitleBack></TitleBack>
-            <GradeContainer>
-                <div className="select">请选择你的年级</div>
-                <div className="classification">
-                   <div className="title">初中</div>
-                   <div>
-                       {/* {this.state.list.map((item)=>( */}
-                            <button className="">初一</button>
-                            <button className="">初二</button>
-                            <button className="">初三</button>
-                       {/* ))
-                    } */}
-                   </div>      
-                </div>
+                <TitleBack></TitleBack>
+                <GradeContainer>
+                    <div className="select">请选择你的年级</div>
+                    <div className="classification">
+                        <div className="title">初中</div>
+                        <div>
+                            {clist.map((item, index) => (
+                                <button 
+                                    key={index+1} 
+                                    className={this.state.active==index+1?'active':''}
+                                    onClick={this.handleClick.bind(this,index+1)}
+                                >{item}</button>
+                            ))}
+                        </div>
+                    </div>
 
-                <div className="classification">
-                   <div className="title">高中</div>
-                   <div>
-                      <button className="">高一</button>
-                      <button className="">高二</button>
-                      <button className="">高三</button>
-                   </div>
-                </div>
+                    <div className="classification">
+                        <div className="title">高中</div>
+                        <div>
+                            {glist.map((item, index) => (
+                                <button 
+                                    key={index+4} 
+                                    className={this.state.active==index+4?'active':''}
+                                    onClick={this.handleClick.bind(this,index+4)}
+                                >{item}</button>
+                            ))}
+                        </div>
+                    </div>
 
-                <div className="btn">
-                    <button className="back">完成，进入会了么</button>
-                </div>
-                
-            </GradeContainer>
+                    <div className="btn">
+                        <button className="back" onClick={this.handleSub.bind(this)}>完成，进入会了么</button>
+                    </div>
+
+                </GradeContainer>
             </>
         )
     }

@@ -17,9 +17,9 @@ export default class Search extends Component{
                     <TitleBar>
                         <div className="hot">热门搜索</div>
                         <div className="tiname">数学公式</div>
-                        <div className="tiname">数</div>
-                        <div className="tiname">数学公式</div>
-                        <div className="tiname">数学公式数学公式数学公式</div>
+                        <div className="tiname">物理习题</div>
+                        <div className="tiname">化学实验书</div>
+                        <div className="tiname">数学公式的勾股定理</div>
                     </TitleBar>
                </SeacrhContainer>
             </>

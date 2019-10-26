@@ -5,6 +5,7 @@ import member_2 from 'assets/profileImages/member-2.png'
 import member_4 from 'assets/profileImages/member-4.png'
 
 const MemberListCom = styled.div`
+    overflow:scroll;
     background-color:#fff;
     height:100%;
     header{
@@ -55,6 +56,7 @@ const MemberListCom = styled.div`
                 display:flex;
                 justify-content:space-around;
                 align-items:center;
+                border-radius:.2rem;
                 p{
                     width:.8rem;
                     color:#fff;
@@ -98,6 +100,27 @@ const MemberListCom = styled.div`
             }
         }
     }
+    .btn{
+        margin:.3rem 0 .8rem;
+        height:.41rem;
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        >div{
+            width:85%;
+            height:.41rem;
+            border-radius:.8rem;
+            background:linear-gradient(to right,#34B1FD,#2F8CFE);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            span{
+                font-size:.16rem;
+                color:#fff;
+            }
+        }
+    }
 `
 
 const MemberOppenCom = styled.div`
@@ -115,7 +138,7 @@ const MemberOppenCom = styled.div`
             height:.4rem;
             margin-right:.1rem;
         }
-        p{
+        .til{
             .name{
                 font-weight:bold;
                 color:#666;
@@ -195,7 +218,7 @@ const MemberOppenCom = styled.div`
 const MemberBackCom = styled.div`
     height:100%;
     background:#fff;
-    posiotion:relative;
+    position:relative;
     .user{
         margin:.1rem .1rem 0 .1rem;
         padding-bottom:.1rem;
@@ -208,8 +231,8 @@ const MemberBackCom = styled.div`
             height:.4rem;
             margin-right:.1rem;
         }
-        p{
-            h3{
+        .content{
+            .name{
                 color:#666;
                 font-size:.18rem;
                 line-height:.25rem;

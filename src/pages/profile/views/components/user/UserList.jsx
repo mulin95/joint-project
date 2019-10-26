@@ -104,7 +104,7 @@ class UserList extends Component {
         　　　　'x-access-token': localStorage.getItem('token')
         　　},
         })
-        console.log(result)
+        // console.log(result)
         this.setState({
             userId:result.data.userid,
             userName:result.data.userNickname,
@@ -130,6 +130,7 @@ class UserList extends Component {
     }
     clickSignOut(){
         console.log('退出登录')
+        this.props.history.push('/index/profile')
     }
     changeName(){
         let user = {

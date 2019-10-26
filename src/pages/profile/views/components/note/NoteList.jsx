@@ -31,8 +31,7 @@ class NoteList extends Component {
 
                                 return (
                                     <li 
-                                        key={item.usernoteid} 
-                                        onTouchStart={this.touchStart}
+                                        key={item.usernoteid}
                                         onClick={()=>this.clickNote(item.usernoteid,item.notetitle,item.notecontent)
                                     }>
                                         <p>{item.notetitle}</p>
@@ -53,7 +52,6 @@ class NoteList extends Component {
                 'x-access-token': localStorage.getItem('token')
             }
         })
-        console.log(result)
         if(result.message === "数据没有查询到"){
 
         }else{
@@ -61,8 +59,6 @@ class NoteList extends Component {
                 noteList : result.data
             })
         }
-    }
-    touchStart(){
     }
     clickNoteAdd(props){
         props.history.push('/profile/note/noteAdd')
